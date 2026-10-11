@@ -11,7 +11,7 @@
 
 
 
-[下载主程序与浏览器插件](https://github.com/WaterSprites/WaterSprite-TaskbarMediaBar/releases)
+[下载 任务栏播放器 WaterSprite TaskbarMediaBar](https://github.com/WaterSprites/WaterSprite-TaskbarMediaBar/releases)
 
 ## 效果预览
 
