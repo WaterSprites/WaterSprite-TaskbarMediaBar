@@ -7,7 +7,7 @@ version=json.loads((root/'package.json').read_text(encoding='utf-8'))['version']
 extensionVersion=json.loads((root/'browser-helper/manifest.json').read_text(encoding='utf-8'))['version']
 release=Path('release-output');release.mkdir(exist_ok=True)
 work=Path(tempfile.mkdtemp(prefix='build-'+version+'-',dir=release))
-appName='WaterSprite TaskbarMediaBar';extensionName=appName+' Extension'
+appName='WaterSprite TaskbarMediaBar';extensionName='浏览器插件'
 out=work/appName
 shutil.copytree(root/'node_modules/electron/dist',out)
 target=out/'resources/app';target.mkdir(parents=True,exist_ok=True)
@@ -22,34 +22,41 @@ for p in (root/'icons').iterdir():
 (out/'electron.exe').rename(out/(appName+'.exe'))
 resource=work/'version-resource.bin';resource.write_bytes(version_resource(version))
 subprocess.run(['powershell.exe','-NoProfile','-ExecutionPolicy','Bypass','-File',str(Path('embed-exe-icon.ps1').resolve()),'-Exe',str((out/(appName+'.exe')).resolve()),'-Icon',str((root/'icons/app.ico').resolve()),'-VersionResource',str(resource.resolve())],check=True)
-extension=work/extensionName
+extension=work/'extension-package'/appName/extensionName
 shutil.copytree(root/'browser-helper',extension,ignore=shutil.ignore_patterns('auth.js','*.pem'))
-(extension/'auth.js').write_text('globalThis.taskbarMediaToken="";\n',encoding='utf-8',newline='\n')
 shutil.copy2(root/'LICENSE',extension/'LICENSE')
-(extension/'安装说明.txt').write_text('''浏览器插件安装
+archives=[(out,release/('WaterSprite-TaskbarMediaBar-'+version+'-x64.zip'))]
+instructions="""浏览器插件安装
 
-1. 将本文件夹放到主程序文件夹旁边，保持名称为 WaterSprite TaskbarMediaBar Extension。
-2. 启动或重新启动主程序，生成本机连接文件。
-3. 打开 chrome://extensions 或 edge://extensions，开启开发者模式。
-4. 加载未打包的扩展程序，选择直接包含 manifest.json 的本文件夹。
-5. 刷新已经打开的音视频网页。
+1. 将主程序 ZIP 和本 ZIP 直接解压到同一位置，合并 WaterSprite TaskbarMediaBar 文件夹；不要额外创建一层同名文件夹。
+2. 启动或重新启动 WaterSprite TaskbarMediaBar.exe。
+3. 打开 {page}，开启“开发者模式”，点击“{load}”。
+4. 选择主程序内的“浏览器插件”文件夹（直接包含 manifest.json 的这一层），刷新音视频网页。
 
-此 ZIP 用于解压后手动安装，不是扩展商店自动安装包。安装后保留插件文件夹。
-主程序与插件可以独立更新，主程序不会覆盖插件代码或版本。
-''',encoding='utf-8')
-archives=[(out,release/('WaterSprite-TaskbarMediaBar-'+version+'-x64.zip')),(extension,release/('WaterSprite-TaskbarMediaBar-Extension-'+extensionVersion+'-Chrome.zip'))]
-for folder,archive in archives:
+浏览器插件更新
+
+1. 将新版插件 ZIP 解压到原位置，覆盖文件；保留原 auth.js，不要先删除插件文件夹。
+2. 在 {page} 点击该插件的“重新加载”，刷新音视频网页。
+
+安装后请保留“浏览器插件”文件夹。更新主程序时也保留它和“用户配置”。
+"""
+for browser,page,load in [('Chrome','chrome://extensions','加载未打包的扩展程序'),('Edge','edge://extensions','加载解压缩的扩展')]:
+ (extension/'安装说明.txt').write_text(instructions.format(page=page,load=load),encoding='utf-8')
+ archive=release/('WaterSprite-TaskbarMediaBar-Extension-'+extensionVersion+'-'+browser+'.zip')
  with zipfile.ZipFile(archive,'w',zipfile.ZIP_DEFLATED,compresslevel=6) as z:
-  for p in folder.rglob('*'):
-   if p.is_file():z.write(p,p.relative_to(work))
+  for p in extension.rglob('*'):
+   if p.is_file():z.write(p,p.relative_to(extension.parent.parent))
+ archives.append((extension,archive))
+with zipfile.ZipFile(archives[0][1],'w',zipfile.ZIP_DEFLATED,compresslevel=6) as z:
+ for p in out.rglob('*'):
+  if p.is_file():z.write(p,p.relative_to(work))
+for folder,archive in archives:
  with zipfile.ZipFile(archive) as z:
   assert z.testzip() is None
-  assert {n.split('/')[0] for n in z.namelist()}=={folder.name}
-  assert not any(n.endswith(('.pem','/browser-token')) or '/用户配置/' in n or '/缓存/' in n for n in z.namelist())
-  if folder==out:
-   assert not any('/browser-helper/' in n or n.endswith('/auth.js') for n in z.namelist())
-   assert target.joinpath('media-cache-paths.cjs').is_file()
-  else:assert z.read(extensionName+'/auth.js')==b'globalThis.taskbarMediaToken="";\n'
+  assert {n.split('/')[0] for n in z.namelist()}=={appName}
+  assert not any(n.endswith(('.pem','/browser-token','/auth.js')) or '/用户配置/' in n or '/缓存/' in n for n in z.namelist())
+  if folder==out:assert not any('/browser-helper/' in n or '/浏览器插件/' in n for n in z.namelist())
+  else:assert appName+'/浏览器插件/manifest.json' in z.namelist()
 report={'version':version,'extensionVersion':extensionVersion,'appFolder':str(out.resolve()),'extensionFolder':str(extension.resolve()),'archives':[{'file':str(p.resolve()),'bytes':p.stat().st_size,'sha256':hashlib.sha256(p.read_bytes()).hexdigest()} for _,p in archives]}
 (release/'release-build.json').write_text(json.dumps(report,ensure_ascii=False,indent=2),encoding='utf-8')
 print(json.dumps(report,ensure_ascii=True))
