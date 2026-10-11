@@ -1,0 +1,10 @@
+const assert=require('node:assert/strict');const {makeTargets}=require('./dock.cjs');const {displayOptions}=require('./display-options.cjs');
+const display={id:1,label:'Test display',bounds:{x:0,y:0,width:1920,height:1080}};const bar={x:0,y:1032,width:1920,height:48,trayLeft:1740};
+const leftAligned=[{x:0,width:48},{x:48,width:210},{x:264,width:48},{x:320,width:48},{x:376,width:48}];const centered=leftAligned.map(r=>({...r,x:r.x+700}));
+const targets=occupied=>makeTargets([display],[{...bar,occupied}],344,40);const assertSafe=(ts,occupied)=>{assert.equal(ts.length,2);for(const t of ts){assert.ok(t.bounds.x>=4);assert.ok(t.bounds.x+344<=1736);for(const r of occupied)assert.ok(t.bounds.x+344<=r.x||t.bounds.x>=r.x+r.width)}};
+assertSafe(targets(leftAligned),leftAligned);assert.equal(targets(leftAligned)[0].bounds.x,428);assertSafe(targets(centered),centered);assert.equal(targets(centered)[0].bounds.x,4);
+const weather=[{x:0,width:140},...centered];assertSafe(targets(weather),weather);assert.equal(targets(weather)[0].bounds.x,144);
+const dense=[{x:1100,width:380},...centered];assertSafe(targets(dense),dense);assert.ok(targets(dense)[1].bounds.x+344<=700);
+assert.equal(targets([{x:0,width:1736}]).length,0);
+const screens=Array.from({length:8},(_,i)=>({id:i+1,label:'Monitor '+(i+1),bounds:{x:i*1920,y:0,width:1920,height:1080}}));const bars=screens.map(d=>({...bar,x:d.bounds.x,trayLeft:d.bounds.x+1740,occupied:leftAligned.map(r=>({...r,x:r.x+d.bounds.x}))}));assert.equal(makeTargets(screens,bars,344,40).length,16);assert.equal(displayOptions(screens,1).length,8);assert.equal(displayOptions([screens[0],screens[7]],1).length,2);assert.ok(displayOptions([screens[0]],1)[0].label.includes('Monitor 1'));assert.equal(makeTargets([screens[0],screens[7]],bars,344,40).length,4);
+console.log('左对齐、居中、左侧小组件、右侧拥挤、无空间避让、8屏和仅2屏连接检查通过');

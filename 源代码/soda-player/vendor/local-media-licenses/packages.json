@@ -1,0 +1,67 @@
+[
+  {
+    "name": "@borewit/text-codec",
+    "version": "0.2.2",
+    "license": "MIT"
+  },
+  {
+    "name": "@tokenizer/inflate",
+    "version": "0.4.1",
+    "license": "MIT"
+  },
+  {
+    "name": "content-type",
+    "version": "3.1.1",
+    "license": "MIT"
+  },
+  {
+    "name": "debug",
+    "version": "4.4.3",
+    "license": "MIT"
+  },
+  {
+    "name": "file-type",
+    "version": "22.1.1",
+    "license": "MIT"
+  },
+  {
+    "name": "ieee754",
+    "version": "1.2.1",
+    "license": "BSD-3-Clause"
+  },
+  {
+    "name": "media-typer",
+    "version": "2.0.0",
+    "license": "MIT"
+  },
+  {
+    "name": "ms",
+    "version": "2.1.3",
+    "license": "MIT"
+  },
+  {
+    "name": "music-metadata",
+    "version": "12.0.0",
+    "license": "MIT"
+  },
+  {
+    "name": "strtok3",
+    "version": "10.3.5",
+    "license": "MIT"
+  },
+  {
+    "name": "token-types",
+    "version": "6.1.2",
+    "license": "MIT"
+  },
+  {
+    "name": "uint8array-extras",
+    "version": "1.6.0",
+    "license": "MIT"
+  },
+  {
+    "name": "win-guid",
+    "version": "0.2.1",
+    "license": "MIT"
+  }
+]

@@ -1,0 +1,40 @@
+const assert=require('node:assert/strict'),fs=require('node:fs'),path=require('node:path'),vm=require('node:vm');
+const {BrowserMedia}=require('./browser-media.cjs');
+const {WebArtwork,allowedUrl,publicAddress,imageMime}=require('./web-artwork.cjs');
+(async()=>{
+ const profile=fs.mkdtempSync(path.join(__dirname,'browser-test-'));
+ const fetched=[];const artwork=new WebArtwork(async url=>{fetched.push(url);return url.endsWith('cover.png')?'data:image/png;base64,iVBORw0KGgo=':'';});
+ const bridge=new BrowserMedia(profile,0,null,artwork);
+ const video={paused:false,ended:false,muted:false,volume:1,getBoundingClientRect(){return {left:0,top:0,right:100,bottom:100}},pause(){this.paused=true;},async play(){this.paused=false;}};
+ let poll;
+ try{
+  await new Promise((resolve,reject)=>{bridge.server.once('listening',resolve);bridge.server.once('error',reject);});
+  const local='http://127.0.0.1:'+bridge.server.address().port;
+  const localFetch=(url,options)=>fetch(url.replace('http://127.0.0.1:43829',local),options);
+  let listener,openedTab=null,openedWindow=null;
+  const runtime={id:'test-extension',onMessage:{addListener:fn=>{listener=fn;}}};
+  vm.runInNewContext(fs.readFileSync(path.join(__dirname,'browser-helper/background.js'),'utf8'),{chrome:{runtime,tabs:{update:async(id,details)=>{openedTab={id,...details}}},windows:{update:async(id,details)=>{openedWindow={id,...details}}}},fetch:(url,options)=>url.startsWith('http://127.')?localFetch(url,options):Promise.resolve({ok:false}),AbortSignal,URL,Uint8Array,btoa});
+  runtime.sendMessage=message=>new Promise(resolve=>listener(message,{id:runtime.id,tab:{id:1,windowId:9,favIconUrl:'https://example.com/icon.png'}},resolve));
+  const context={globalThis:{taskbarMediaToken:bridge.token},crypto:{randomUUID:()=> 'test-tab'},navigator:{mediaSession:{metadata:{artwork:[{src:'https://example.com/cover.png'}]}}},URL,document:{location:{hostname:'example.com'},body:{},documentElement:{},defaultView:{innerWidth:1000,innerHeight:800},contains:()=>true,addEventListener:()=>{},title:'Test live room',baseURI:'https://example.com/live',querySelector:()=>null,querySelectorAll:selector=>selector==='video,audio'?[video]:[]},setInterval:fn=>{poll=fn;},chrome:{runtime}};
+  vm.runInNewContext(fs.readFileSync(path.join(__dirname,'browser-helper/page-media.js'),'utf8'),context);context.TaskbarPageMedia=context.globalThis.TaskbarPageMedia;
+  vm.runInNewContext(fs.readFileSync(path.join(__dirname,'browser-helper/content.js'),'utf8'),context);
+  await new Promise(resolve=>setTimeout(resolve,100));
+  assert.equal(bridge.current().playing,true);
+  assert.equal(bridge.open('test-tab'),true);await poll();assert.deepEqual(openedTab,{id:1,active:true});assert.deepEqual(openedWindow,{id:9,focused:true});assert.equal(bridge.open('missing-tab'),false);
+  assert.equal(bridge.current().coverKind,'media');const fetchCount=fetched.length;assert.ok(fetchCount>=1);
+  assert.equal(bridge.toggle(),false);await poll();assert.equal(video.paused,true);
+  await poll();assert.equal(bridge.current().playing,false);
+  assert.equal(bridge.current().coverKind,'media');assert.equal(fetched.length,fetchCount);
+  bridge.toggle();await poll();assert.equal(video.paused,false);
+  bridge.toggle();assert.equal(bridge.toggle(),true);assert.equal(bridge.toggle(),false);await poll();assert.equal(video.paused,true);await poll();
+  video.play=function(){this.paused=false;return new Promise(()=>{});};bridge.toggle();await Promise.race([poll(),new Promise((_,reject)=>setTimeout(()=>reject(Error('Buffering locked command polling')),500))]);assert.equal(video.paused,false);await poll();
+  bridge.toggle();await poll();assert.equal(video.paused,true);await poll();
+  const denied=await localFetch('http://127.0.0.1:43829/media',{method:'POST',body:'{}'});assert.equal(denied.status,403);
+  context.navigator.mediaSession.metadata=null;await poll();await new Promise(resolve=>setTimeout(resolve,20));assert.equal(bridge.current().cover,'');
+  const fallback=new WebArtwork(async url=>url.endsWith('icon.png')?'data:image/png;base64,iVBORw0KGgo=':'');assert.equal((await fallback.read([{src:'https://example.com/missing.png',kind:'poster'},{src:'https://example.com/icon.png',kind:'icon'}])).coverKind,'icon');
+  for(const url of ['http://example.com/a','https://127.0.0.1/a','https://192.168.1.1/a','https://localhost/a'])assert.equal(allowedUrl(url),false);
+  assert.equal(publicAddress('239.0.0.1'),false);assert.equal(publicAddress('8.8.8.8'),true);assert.equal(imageMime(Buffer.from('not an image')),'');
+  const png=fs.readFileSync(path.join(__dirname,'icons','cover-dark.png'));const uploaded=await localFetch('http://127.0.0.1:43829/media',{method:'POST',headers:{'Content-Type':'application/json','X-Taskbar-Token':bridge.token},body:JSON.stringify({id:'browser-image-test',title:'Video - YouTube',url:'https://www.youtube.com/watch?v=test',playing:true,available:true,coverData:'data:application/octet-stream;base64,'+png.toString('base64'),coverKind:'thumbnail'})});assert.equal(uploaded.status,200);assert.equal(bridge.current().coverKind,'thumbnail');assert.ok(bridge.current().cover.startsWith('data:image/png;base64,'));
+  console.log('网页播控连接、真实 pause/play 调用和未授权请求拒绝检查通过');
+ }finally{bridge.close();fs.rmSync(profile,{recursive:true});}
+})().catch(error=>{console.error(error);process.exitCode=1;});

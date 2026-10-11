@@ -1,0 +1,25 @@
+// Read only media metadata near the queried video, inside the page's own JavaScript world.
+(()=>{
+ const results=new WeakMap();
+ const valid=s=>typeof s==='string'&&s.length<2048&&/^https?:\/\//.test(s);
+ function extract(video,title){
+  const images=[],hints=[],seen=new WeakSet();let budget=450;
+  function cover(value,depth=0){if(depth>3||!value)return;if(valid(value)){images.push(value);return;}if(Array.isArray(value)){value.slice(0,6).forEach(v=>cover(v,depth+1));return;}if(typeof value==='object'){for(const key of ['url','src','url_list','urlList','urls','coverUrl','coverUrls'])cover(value[key],depth+1);}}
+  function visit(value,depth=0){if(!value||typeof value!=='object'||depth>5||budget--<=0||seen.has(value)||value instanceof Node)return;seen.add(value);
+   const caption=value.desc||value.caption||value.title||value.content;
+   const matching=typeof caption==='string'&&title&&title.replace(/\s/g,'').startsWith(caption.replace(/\s/g,'').slice(0,40));
+   if(matching){for(const key of ['cover','coverUrl','coverUrls','origin_cover','dynamic_cover','page_pic','picUrl','pic','poster'])cover(value[key]);if(value.video)for(const key of ['cover','origin_cover','dynamic_cover','coverUrl','poster'])cover(value.video[key]);if(value.page_info){cover(value.page_info.page_pic);cover(value.page_info.media_info?.poster);}}
+   for(const key of Object.keys(value).sort((a,b)=>Number(/photo|video|detail|aweme|info|data|props/i.test(b))-Number(/photo|video|detail|aweme|info|data|props/i.test(a))).slice(0,40)){if(/^(owner|_owner|return|sibling|stateNode|ref|auth|user|account|token|cookie|headers)$/i.test(key))continue;try{visit(value[key],depth+1)}catch{}}
+  }
+  function vuePath(app){const root=app?._container?._vnode||app?._instance?.vnode;let remaining=1500;const visited=new WeakSet();function find(node,parents=[]){if(!node||typeof node!=='object'||remaining--<=0||visited.has(node))return null;visited.add(node);if(node.el===video)return [...parents,node];if(node.el?.nodeType===1&&!node.el.contains(video))return null;const next=[...parents,node];if(node.component?.subTree){const found=find(node.component.subTree,next);if(found)return found;}if(Array.isArray(node.children))for(const child of node.children){const found=find(child,next);if(found)return found;}return node.el?.nodeType===1&&node.el.contains(video)?next:null;}return find(root);}
+  let el=video;
+  for(let i=0;el&&i<16;i++,el=el.parentElement){if(el===document.body)break;for(const key of Object.getOwnPropertyNames(el)){if(/^__reactProps\$|^__reactFiber\$|^__vueParentComponent$|^__vue__$|^__vue_app__$/.test(key)){try{let v=el[key];if(key==='__vue_app__'){const chain=vuePath(v);if(chain){if(hints.length<10)hints.push({framework:'vue-video-path',keys:chain.filter(n=>n.component).flatMap(n=>Object.keys(n.component.setupState||{}).filter(k=>!/auth|user|account|token|cookie/i.test(k))).slice(-18),depth:chain.length});for(const node of chain.reverse()){budget=450;visit(node.props);const c=node.component;if(c)for(const field of ['props','data','setupState'])visit(c[field]);if(images.length)break;}}v=v._instance||v._container?._vnode?.component||v;}for(let level=0;v&&level<8;level++,v=v.return||v.parent||v.$parent){if(hints.length<10)hints.push({framework:key.split('$')[0],keys:Object.keys(v?.$data||v?.memoizedProps||v?.props||v||{}).slice(0,18)});visit(v?.memoizedProps||v?.props||v);for(const field of ['$data','$props','setupState','data','ctx','subTree'])if(v[field])visit(v[field]);if(images.length)break;}}catch{}}}if(images.length)break;}
+  if(!images.length){for(const key of ['__NUXT__','__NEXT_DATA__','__INITIAL_STATE__']){const state=window[key];if(!state||typeof state!=='object')continue;if(hints.length<10)hints.push({framework:key,keys:Object.keys(state).filter(k=>!/auth|user|account|token|cookie/i.test(k)).slice(0,18)});for(const field of ['data','state','props','photo','photoFeed','feeds','video','detail'])if(state[field])visit(state[field]);}}
+  if(!hints.length)hints.push({framework:'none',keys:Object.getOwnPropertyNames(video).filter(k=>!/^on/.test(k)).slice(0,18),ancestors:(()=>{let e=video,a=[];for(let i=0;e&&i<8;i++,e=e.parentElement)a.push({tag:e.tagName,class:String(e.className||'').slice(0,100)});return a})()});
+  return {images:[...new Set(images)].slice(0,5).map(src=>({src,kind:'thumbnail'})),hints};
+ }
+ document.addEventListener('watersprite-cover-query',event=>{
+  const video=event.target;if(!(video instanceof HTMLVideoElement))return;
+  try{const request=JSON.parse(video.getAttribute('data-watersprite-cover-query')||'{}');if(typeof request.title!=='string')return;const old=results.get(video);if(old?.key===request.key&&Date.now()-old.at<5000){video.setAttribute('data-watersprite-cover-result',old.value);return;}const value=JSON.stringify({key:request.key,...extract(video,request.title)});results.set(video,{key:request.key,at:Date.now(),value});video.setAttribute('data-watersprite-cover-result',value);}catch{}
+ },true);
+})();

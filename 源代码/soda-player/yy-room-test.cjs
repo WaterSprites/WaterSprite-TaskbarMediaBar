@@ -1,0 +1,23 @@
+const assert=require('node:assert/strict');
+const {YYRoom,channelFromTargets,parsePage}=require('./yy-room.cjs');
+(async()=>{
+ const target=id=>({type:'page',url:'https://web.yy.com/entertainment_pc/2.84.0/index.html?sid='+id});
+ assert.equal(channelFromTargets([target('67420223')]),'67420223');
+ assert.equal(channelFromTargets([target('1'),target('2')]),'','Ambiguous rooms rejected');
+ assert.equal(channelFromTargets([{type:'page',url:'https://web.yy.com.evil.test/entertainment_pc/a?sid=1'}]),'');
+ const html='sid:"67420223",uid:"1456584734",roomName:decodeURIComponent("%E6%B5%8B%E8%AF%95%E7%9B%B4%E6%92%AD")';
+ assert.deepEqual(parsePage(html,'67420223'),{title:'测试直播',uid:'1456584734'});
+ assert.equal(parsePage(html,'1355366768'),null,'Page must belong to requested channel');
+ let id='67420223',clock=10000,discovery=0;
+ const pending=new Map(),calls=[];
+ const reader=new YYRoom({now:()=>clock,discoverPorts:async()=>{discovery++;return [{pid:1,port:12345},{pid:1,port:30960}];},readTargets:async port=>port===30960?[target(id)]:[],fetchMetadata:key=>{calls.push(key);return new Promise(resolve=>pending.set(key,resolve));},artwork:{read:async items=>({cover:'image:'+items[0].src})}});
+ assert.equal(await reader.read(),null);assert.equal(reader.port,30960);await reader.read();assert.equal(calls.length,1);
+ id='1355366768';assert.equal(await reader.read(),null);
+ pending.get('67420223')({title:'Previous room',coverUrl:'old'});await reader.requests.get('67420223');assert.equal(reader.current,null);
+ pending.get(id)({title:'New room',coverUrl:'new'});await reader.requests.get(id);
+ assert.deepEqual(await reader.read(),{roomId:id,title:'New room',cover:'image:new'});
+ assert.equal(discovery,1,'Reuse owned endpoint without repeated process discovery');
+ assert.equal(calls.length,2,'Metadata cache reused');
+ reader.reset();assert.equal(reader.current,null);assert.equal(reader.port,0);
+ console.log('PASS: owned port discovery, strict channel identity, multiple-room ambiguity, switch clearing, stale responses, request coalescing and cache.');
+})().catch(e=>{console.error(e);process.exitCode=1});

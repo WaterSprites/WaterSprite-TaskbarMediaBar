@@ -1,0 +1,10 @@
+const assert=require('node:assert/strict'),{SourceRouter}=require('./source-router.cjs');
+const audio=[{pid:1,name:'RpcMediaDecoderEx',active:true,muted:false,peak:.2}];const r=new SourceRouter();
+assert.equal(r.choose({source:'',audio,sessions:[],webSources:[]},1000),'audio:1');
+const page={source:'web:fast',browser:'Chrome',title:'第一条视频',playing:true};
+assert.equal(r.choose({audio,sessions:[page],webSources:[page]},2000),page.source);
+assert.equal(r.choose({audio,sessions:[page],webSources:[page]},2100),page.source);
+const second={...page,title:'第二条视频'};assert.equal(r.choose({audio,sessions:[second],webSources:[second]},3000),page.source);
+assert.equal(r.choose({audio,sessions:[],webSources:[]},3100),'audio:1');
+const initial=new SourceRouter();assert.equal(initial.choose({audio,sessions:[page],webSources:[page],foregroundName:'Chrome'},5000),page.source);
+console.log('新网页自动接替旧直播；换视频继续跟随；页面关闭回到有效音源；同时启动识别前台。');

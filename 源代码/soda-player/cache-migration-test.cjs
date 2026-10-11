@@ -1,0 +1,32 @@
+const fs=require('node:fs'),path=require('node:path'),os=require('node:os'),assert=require('node:assert/strict');
+const {configureCache,planCacheMigration}=require('./cache-paths.cjs');
+const root=fs.mkdtempSync(path.join(os.tmpdir(),'watersprite-move-test-'));
+const env={TEMP:process.env.TEMP,TMP:process.env.TMP};
+const app={setPath(){},setAppLogsPath(){}};
+try{
+ const first=configureCache(app,{base:root});
+ fs.writeFileSync(first.tokenPath,'test-token');
+ fs.writeFileSync(path.join(first.folders.data,'data.bin'),Buffer.from([0,1,2,255]));
+ fs.mkdirSync(path.join(first.folders.logs,'nested'));fs.writeFileSync(path.join(first.folders.logs,'nested','log.txt'),'preserve');
+ const next=path.join(root,'new-cache');
+ const settings={...first.settings,themeMode:'light',cacheMigration:planCacheMigration(first.cacheFolder,next,first.configFolder)};
+ fs.writeFileSync(first.settingsFile,JSON.stringify(settings));
+ const second=configureCache(app,{base:root});
+ assert.equal(second.cacheFolder,next);assert.equal(second.configFolder,first.configFolder);
+ assert.equal(fs.readFileSync(second.tokenPath,'utf8'),'test-token');assert.equal(second.settings.themeMode,'light');
+ assert.deepEqual(fs.readFileSync(path.join(second.folders.data,'data.bin')),Buffer.from([0,1,2,255]));
+ assert.equal(fs.readFileSync(path.join(second.folders.logs,'nested','log.txt'),'utf8'),'preserve');
+ assert.equal(fs.existsSync(first.cacheFolder),false);
+ assert.throws(()=>planCacheMigration(next,path.join(next,'child'),second.configFolder));
+ assert.throws(()=>planCacheMigration(next,root,second.configFolder));
+ const conflict=path.join(root,'conflict');fs.mkdirSync(path.join(conflict,'日志'),{recursive:true});
+ assert.throws(()=>planCacheMigration(next,conflict,second.configFolder));
+ assert.ok(fs.existsSync(path.join(next,'运行数据','data.bin')));
+ fs.writeFileSync(path.join(next,'personal.txt'),'unrelated');
+ fs.writeFileSync(second.settingsFile,JSON.stringify({...second.settings,cacheMigration:planCacheMigration(next,path.join(root,'third-cache'),second.configFolder)}));
+ const third=configureCache(app,{base:root});
+ assert.equal(fs.readFileSync(path.join(next,'personal.txt'),'utf8'),'unrelated');
+ assert.equal(fs.existsSync(path.join(next,'运行数据')),false);
+ assert.ok(fs.existsSync(path.join(third.folders.data,'data.bin')));
+ console.log('Migration: content hashes, settings/token, old cleanup, nested/collision rejection, unrelated-file preservation passed.');
+}finally{for(const key of ['TEMP','TMP'])if(env[key]===undefined)delete process.env[key];else process.env[key]=env[key];fs.rmSync(root,{recursive:true,force:true});}

@@ -1,0 +1,19 @@
+node_modules/
+.npm-cache/
+dist/
+__pycache__/
+*.pyc
+*.zip
+*.pem
+auth.js
+browser-token
+*.log
+browser-test-*/
+*-test-cache/
+smoke-*.png
+smoke-*.json
+smoke-error.txt
+*-result.json
+WaterSprite TaskbarMediaBar/
+WaterSprite TaskbarMediaBar 浏览器插件/
+watersprite-version-resource.bin

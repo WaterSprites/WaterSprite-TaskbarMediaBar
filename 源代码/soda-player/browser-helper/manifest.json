@@ -1,0 +1,47 @@
+{
+  "manifest_version": 3,
+  "name": "任务栏播放器 WaterSprite TaskbarMediaBar",
+  "version": "1.1.18",
+  "description": "任务栏播放器的浏览器控制插件，读取正在播放网页的标题和图标，控制音视频播放与暂停。",
+  "background": {
+    "service_worker": "background.js"
+  },
+  "host_permissions": [
+    "http://127.0.0.1:43829/*",
+    "https://*/*"
+  ],
+  "content_scripts": [
+    {
+      "matches": [
+        "https://*/*",
+        "http://*/*"
+      ],
+      "js": [
+        "auth.js",
+        "page-media.js",
+        "content.js"
+      ],
+      "all_frames": true
+    },
+    {
+      "js": [
+        "page-cover.js"
+      ],
+      "matches": [
+        "https://*.douyin.com/*",
+        "https://*.kuaishou.com/*",
+        "https://*.weibo.com/*",
+        "https://weibo.com/*"
+      ],
+      "world": "MAIN",
+      "all_frames": true,
+      "run_at": "document_start"
+    }
+  ],
+  "icons": {
+    "16": "icons/app-16.png",
+    "32": "icons/app-32.png",
+    "48": "icons/app-48.png",
+    "128": "icons/app-128.png"
+  }
+}

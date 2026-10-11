@@ -1,0 +1,11 @@
+const fs=require('node:fs'),vm=require('node:vm'),assert=require('node:assert/strict');
+const source=fs.readFileSync(require.resolve('./main.cjs'),'utf8');
+const command=source.slice(source.indexOf('function command(action,source){'),source.indexOf('\nfunction acceptMedia(s){'));
+const sent=[],written=[],cancelled=[];
+const context={lastState:{source:'Chrome',playing:true,browserControl:false},pending:null,Date,send:s=>sent.push(s),setTimeout:()=>123,clearTimeout:id=>cancelled.push(id),commandFile:'commands',fs:{writeFileSync:(file,text)=>written.push(JSON.parse(text))}};
+vm.createContext(context);vm.runInContext(command,context);
+vm.runInContext("command('toggle');command('toggle');command('toggle');",context);
+assert.deepEqual(written.map(c=>c.desiredPlaying),[false,true,false]);
+assert.equal(cancelled.length,2);assert.equal(context.pending.desired,false);
+assert.equal(fs.readFileSync(require.resolve('./src/Widget.vue'),'utf8').includes('!state.canToggle || state.commandPending'),false);
+console.log('普通网页视频快速连续暂停/播放、最后一次操作生效、按钮不因等待确认禁用检查通过');

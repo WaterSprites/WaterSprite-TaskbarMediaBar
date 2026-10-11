@@ -1,0 +1,3378 @@
+{
+  "inputs": {
+    "node_modules/ms/index.js": {
+      "bytes": 3024,
+      "imports": [],
+      "format": "cjs"
+    },
+    "node_modules/debug/src/common.js": {
+      "bytes": 6915,
+      "imports": [
+        {
+          "path": "node_modules/ms/index.js",
+          "kind": "require-call",
+          "original": "ms"
+        }
+      ],
+      "format": "cjs"
+    },
+    "node_modules/debug/src/browser.js": {
+      "bytes": 6103,
+      "imports": [
+        {
+          "path": "node_modules/debug/src/common.js",
+          "kind": "require-call",
+          "original": "./common"
+        }
+      ],
+      "format": "cjs"
+    },
+    "node_modules/debug/src/node.js": {
+      "bytes": 4728,
+      "imports": [
+        {
+          "path": "tty",
+          "kind": "require-call",
+          "external": true
+        },
+        {
+          "path": "util",
+          "kind": "require-call",
+          "external": true
+        },
+        {
+          "path": "supports-color",
+          "kind": "require-call",
+          "external": true
+        },
+        {
+          "path": "node_modules/debug/src/common.js",
+          "kind": "require-call",
+          "original": "./common"
+        }
+      ],
+      "format": "cjs"
+    },
+    "node_modules/debug/src/index.js": {
+      "bytes": 314,
+      "imports": [
+        {
+          "path": "node_modules/debug/src/browser.js",
+          "kind": "require-call",
+          "original": "./browser.js"
+        },
+        {
+          "path": "node_modules/debug/src/node.js",
+          "kind": "require-call",
+          "original": "./node.js"
+        }
+      ],
+      "format": "cjs"
+    },
+    "node_modules/strtok3/lib/stream/Errors.js": {
+      "bytes": 439,
+      "imports": [],
+      "format": "esm"
+    },
+    "node_modules/strtok3/lib/stream/Deferred.js": {
+      "bytes": 261,
+      "imports": [],
+      "format": "esm"
+    },
+    "node_modules/strtok3/lib/stream/AbstractStreamReader.js": {
+      "bytes": 2544,
+      "imports": [
+        {
+          "path": "node_modules/strtok3/lib/stream/Errors.js",
+          "kind": "import-statement",
+          "original": "./Errors.js"
+        }
+      ],
+      "format": "esm"
+    },
+    "node_modules/strtok3/lib/stream/StreamReader.js": {
+      "bytes": 2495,
+      "imports": [
+        {
+          "path": "node_modules/strtok3/lib/stream/Errors.js",
+          "kind": "import-statement",
+          "original": "./Errors.js"
+        },
+        {
+          "path": "node_modules/strtok3/lib/stream/Deferred.js",
+          "kind": "import-statement",
+          "original": "./Deferred.js"
+        },
+        {
+          "path": "node_modules/strtok3/lib/stream/AbstractStreamReader.js",
+          "kind": "import-statement",
+          "original": "./AbstractStreamReader.js"
+        }
+      ],
+      "format": "esm"
+    },
+    "node_modules/strtok3/lib/stream/WebStreamReader.js": {
+      "bytes": 323,
+      "imports": [
+        {
+          "path": "node_modules/strtok3/lib/stream/AbstractStreamReader.js",
+          "kind": "import-statement",
+          "original": "./AbstractStreamReader.js"
+        }
+      ],
+      "format": "esm"
+    },
+    "node_modules/strtok3/lib/stream/WebStreamByobReader.js": {
+      "bytes": 951,
+      "imports": [
+        {
+          "path": "node_modules/strtok3/lib/stream/WebStreamReader.js",
+          "kind": "import-statement",
+          "original": "./WebStreamReader.js"
+        }
+      ],
+      "format": "esm"
+    },
+    "node_modules/strtok3/lib/stream/WebStreamDefaultReader.js": {
+      "bytes": 2087,
+      "imports": [
+        {
+          "path": "node_modules/strtok3/lib/stream/Errors.js",
+          "kind": "import-statement",
+          "original": "./Errors.js"
+        },
+        {
+          "path": "node_modules/strtok3/lib/stream/AbstractStreamReader.js",
+          "kind": "import-statement",
+          "original": "./AbstractStreamReader.js"
+        }
+      ],
+      "format": "esm"
+    },
+    "node_modules/strtok3/lib/stream/WebStreamReaderFactory.js": {
+      "bytes": 760,
+      "imports": [
+        {
+          "path": "node_modules/strtok3/lib/stream/WebStreamByobReader.js",
+          "kind": "import-statement",
+          "original": "./WebStreamByobReader.js"
+        },
+        {
+          "path": "node_modules/strtok3/lib/stream/WebStreamDefaultReader.js",
+          "kind": "import-statement",
+          "original": "./WebStreamDefaultReader.js"
+        }
+      ],
+      "format": "esm"
+    },
+    "node_modules/strtok3/lib/stream/index.js": {
+      "bytes": 311,
+      "imports": [
+        {
+          "path": "node_modules/strtok3/lib/stream/Errors.js",
+          "kind": "import-statement",
+          "original": "./Errors.js"
+        },
+        {
+          "path": "node_modules/strtok3/lib/stream/StreamReader.js",
+          "kind": "import-statement",
+          "original": "./StreamReader.js"
+        },
+        {
+          "path": "node_modules/strtok3/lib/stream/WebStreamByobReader.js",
+          "kind": "import-statement",
+          "original": "./WebStreamByobReader.js"
+        },
+        {
+          "path": "node_modules/strtok3/lib/stream/WebStreamDefaultReader.js",
+          "kind": "import-statement",
+          "original": "./WebStreamDefaultReader.js"
+        },
+        {
+          "path": "node_modules/strtok3/lib/stream/WebStreamReaderFactory.js",
+          "kind": "import-statement",
+          "original": "./WebStreamReaderFactory.js"
+        }
+      ],
+      "format": "esm"
+    },
+    "node_modules/strtok3/lib/AbstractTokenizer.js": {
+      "bytes": 3832,
+      "imports": [
+        {
+          "path": "node_modules/strtok3/lib/stream/index.js",
+          "kind": "import-statement",
+          "original": "./stream/index.js"
+        }
+      ],
+      "format": "esm"
+    },
+    "node_modules/strtok3/lib/ReadStreamTokenizer.js": {
+      "bytes": 4009,
+      "imports": [
+        {
+          "path": "node_modules/strtok3/lib/AbstractTokenizer.js",
+          "kind": "import-statement",
+          "original": "./AbstractTokenizer.js"
+        },
+        {
+          "path": "node_modules/strtok3/lib/stream/index.js",
+          "kind": "import-statement",
+          "original": "./stream/index.js"
+        }
+      ],
+      "format": "esm"
+    },
+    "node_modules/strtok3/lib/BufferTokenizer.js": {
+      "bytes": 1789,
+      "imports": [
+        {
+          "path": "node_modules/strtok3/lib/stream/index.js",
+          "kind": "import-statement",
+          "original": "./stream/index.js"
+        },
+        {
+          "path": "node_modules/strtok3/lib/AbstractTokenizer.js",
+          "kind": "import-statement",
+          "original": "./AbstractTokenizer.js"
+        }
+      ],
+      "format": "esm"
+    },
+    "node_modules/strtok3/lib/BlobTokenizer.js": {
+      "bytes": 1820,
+      "imports": [
+        {
+          "path": "node_modules/strtok3/lib/stream/index.js",
+          "kind": "import-statement",
+          "original": "./stream/index.js"
+        },
+        {
+          "path": "node_modules/strtok3/lib/AbstractTokenizer.js",
+          "kind": "import-statement",
+          "original": "./AbstractTokenizer.js"
+        }
+      ],
+      "format": "esm"
+    },
+    "node_modules/strtok3/lib/core.js": {
+      "bytes": 2269,
+      "imports": [
+        {
+          "path": "node_modules/strtok3/lib/stream/index.js",
+          "kind": "import-statement",
+          "original": "./stream/index.js"
+        },
+        {
+          "path": "node_modules/strtok3/lib/ReadStreamTokenizer.js",
+          "kind": "import-statement",
+          "original": "./ReadStreamTokenizer.js"
+        },
+        {
+          "path": "node_modules/strtok3/lib/BufferTokenizer.js",
+          "kind": "import-statement",
+          "original": "./BufferTokenizer.js"
+        },
+        {
+          "path": "node_modules/strtok3/lib/BlobTokenizer.js",
+          "kind": "import-statement",
+          "original": "./BlobTokenizer.js"
+        },
+        {
+          "path": "node_modules/strtok3/lib/stream/index.js",
+          "kind": "import-statement",
+          "original": "./stream/index.js"
+        },
+        {
+          "path": "node_modules/strtok3/lib/AbstractTokenizer.js",
+          "kind": "import-statement",
+          "original": "./AbstractTokenizer.js"
+        }
+      ],
+      "format": "esm"
+    },
+    "node_modules/strtok3/lib/FileTokenizer.js": {
+      "bytes": 2280,
+      "imports": [
+        {
+          "path": "node_modules/strtok3/lib/AbstractTokenizer.js",
+          "kind": "import-statement",
+          "original": "./AbstractTokenizer.js"
+        },
+        {
+          "path": "node_modules/strtok3/lib/stream/index.js",
+          "kind": "import-statement",
+          "original": "./stream/index.js"
+        },
+        {
+          "path": "node:fs/promises",
+          "kind": "import-statement",
+          "external": true
+        }
+      ],
+      "format": "esm"
+    },
+    "node_modules/strtok3/lib/index.js": {
+      "bytes": 834,
+      "imports": [
+        {
+          "path": "node:fs/promises",
+          "kind": "import-statement",
+          "external": true
+        },
+        {
+          "path": "node_modules/strtok3/lib/core.js",
+          "kind": "import-statement",
+          "original": "./core.js"
+        },
+        {
+          "path": "node_modules/strtok3/lib/FileTokenizer.js",
+          "kind": "import-statement",
+          "original": "./FileTokenizer.js"
+        },
+        {
+          "path": "node_modules/strtok3/lib/FileTokenizer.js",
+          "kind": "import-statement",
+          "original": "./FileTokenizer.js"
+        },
+        {
+          "path": "node_modules/strtok3/lib/core.js",
+          "kind": "import-statement",
+          "original": "./core.js"
+        }
+      ],
+      "format": "esm"
+    },
+    "node_modules/@borewit/text-codec/lib/index.js": {
+      "bytes": 11890,
+      "imports": [],
+      "format": "esm"
+    },
+    "node_modules/ieee754/index.js": {
+      "bytes": 2154,
+      "imports": [],
+      "format": "cjs"
+    },
+    "node_modules/token-types/lib/index.js": {
+      "bytes": 9735,
+      "imports": [
+        {
+          "path": "node_modules/ieee754/index.js",
+          "kind": "import-statement",
+          "original": "ieee754"
+        },
+        {
+          "path": "node_modules/@borewit/text-codec/lib/index.js",
+          "kind": "import-statement",
+          "original": "@borewit/text-codec"
+        }
+      ],
+      "format": "esm"
+    },
+    "node_modules/music-metadata/lib/common/BasicParser.js": {
+      "bytes": 488,
+      "imports": [],
+      "format": "esm"
+    },
+    "node_modules/uint8array-extras/index.js": {
+      "bytes": 7988,
+      "imports": [],
+      "format": "esm"
+    },
+    "node_modules/music-metadata/lib/ParseError.js": {
+      "bytes": 1482,
+      "imports": [],
+      "format": "esm"
+    },
+    "node_modules/music-metadata/lib/common/Util.js": {
+      "bytes": 5502,
+      "imports": [
+        {
+          "path": "node_modules/token-types/lib/index.js",
+          "kind": "import-statement",
+          "original": "token-types"
+        },
+        {
+          "path": "node_modules/uint8array-extras/index.js",
+          "kind": "import-statement",
+          "original": "uint8array-extras"
+        },
+        {
+          "path": "node_modules/music-metadata/lib/ParseError.js",
+          "kind": "import-statement",
+          "original": "../ParseError.js"
+        }
+      ],
+      "format": "esm"
+    },
+    "node_modules/music-metadata/lib/common/FourCC.js": {
+      "bytes": 892,
+      "imports": [
+        {
+          "path": "node_modules/@borewit/text-codec/lib/index.js",
+          "kind": "import-statement",
+          "original": "@borewit/text-codec"
+        },
+        {
+          "path": "node_modules/music-metadata/lib/ParseError.js",
+          "kind": "import-statement",
+          "original": "../ParseError.js"
+        },
+        {
+          "path": "node_modules/music-metadata/lib/common/Util.js",
+          "kind": "import-statement",
+          "original": "./Util.js"
+        }
+      ],
+      "format": "esm"
+    },
+    "node_modules/music-metadata/lib/apev2/APEv2Token.js": {
+      "bytes": 4441,
+      "imports": [
+        {
+          "path": "node_modules/token-types/lib/index.js",
+          "kind": "import-statement",
+          "original": "token-types"
+        },
+        {
+          "path": "node_modules/music-metadata/lib/common/FourCC.js",
+          "kind": "import-statement",
+          "original": "../common/FourCC.js"
+        }
+      ],
+      "format": "esm"
+    },
+    "node_modules/music-metadata/lib/apev2/APEv2Parser.js": {
+      "bytes": 10044,
+      "imports": [
+        {
+          "path": "node_modules/@borewit/text-codec/lib/index.js",
+          "kind": "import-statement",
+          "original": "@borewit/text-codec"
+        },
+        {
+          "path": "node_modules/debug/src/index.js",
+          "kind": "import-statement",
+          "original": "debug"
+        },
+        {
+          "path": "node_modules/strtok3/lib/index.js",
+          "kind": "import-statement",
+          "original": "strtok3"
+        },
+        {
+          "path": "node_modules/token-types/lib/index.js",
+          "kind": "import-statement",
+          "original": "token-types"
+        },
+        {
+          "path": "node_modules/music-metadata/lib/common/BasicParser.js",
+          "kind": "import-statement",
+          "original": "../common/BasicParser.js"
+        },
+        {
+          "path": "node_modules/music-metadata/lib/common/Util.js",
+          "kind": "import-statement",
+          "original": "../common/Util.js"
+        },
+        {
+          "path": "node_modules/music-metadata/lib/ParseError.js",
+          "kind": "import-statement",
+          "original": "../ParseError.js"
+        },
+        {
+          "path": "node_modules/music-metadata/lib/apev2/APEv2Token.js",
+          "kind": "import-statement",
+          "original": "./APEv2Token.js"
+        }
+      ],
+      "format": "esm"
+    },
+    "node_modules/music-metadata/lib/id3v1/ID3v1Parser.js": {
+      "bytes": 7505,
+      "imports": [
+        {
+          "path": "node_modules/@borewit/text-codec/lib/index.js",
+          "kind": "import-statement",
+          "original": "@borewit/text-codec"
+        },
+        {
+          "path": "node_modules/debug/src/index.js",
+          "kind": "import-statement",
+          "original": "debug"
+        },
+        {
+          "path": "node_modules/token-types/lib/index.js",
+          "kind": "import-statement",
+          "original": "token-types"
+        },
+        {
+          "path": "node_modules/music-metadata/lib/apev2/APEv2Parser.js",
+          "kind": "import-statement",
+          "original": "../apev2/APEv2Parser.js"
+        },
+        {
+          "path": "node_modules/music-metadata/lib/common/BasicParser.js",
+          "kind": "import-statement",
+          "original": "../common/BasicParser.js"
+        },
+        {
+          "path": "node_modules/music-metadata/lib/common/Util.js",
+          "kind": "import-statement",
+          "original": "../common/Util.js"
+        }
+      ],
+      "format": "esm"
+    },
+    "node_modules/music-metadata/lib/lyrics3/Lyrics3.js": {
+      "bytes": 647,
+      "imports": [
+        {
+          "path": "node_modules/@borewit/text-codec/lib/index.js",
+          "kind": "import-statement",
+          "original": "@borewit/text-codec"
+        }
+      ],
+      "format": "esm"
+    },
+    "node_modules/content-type/dist/index.js": {
+      "bytes": 9827,
+      "imports": [],
+      "format": "esm"
+    },
+    "node_modules/@tokenizer/inflate/lib/ZipToken.js": {
+      "bytes": 4836,
+      "imports": [
+        {
+          "path": "node_modules/token-types/lib/index.js",
+          "kind": "import-statement",
+          "original": "token-types"
+        }
+      ],
+      "format": "esm"
+    },
+    "node_modules/@tokenizer/inflate/lib/ZipHandler.js": {
+      "bytes": 10432,
+      "imports": [
+        {
+          "path": "node_modules/token-types/lib/index.js",
+          "kind": "import-statement",
+          "original": "token-types"
+        },
+        {
+          "path": "node_modules/debug/src/index.js",
+          "kind": "import-statement",
+          "original": "debug"
+        },
+        {
+          "path": "node_modules/@tokenizer/inflate/lib/ZipToken.js",
+          "kind": "import-statement",
+          "original": "./ZipToken.js"
+        }
+      ],
+      "format": "esm"
+    },
+    "node_modules/@tokenizer/inflate/lib/GzipHandler.js": {
+      "bytes": 629,
+      "imports": [],
+      "format": "esm"
+    },
+    "node_modules/@tokenizer/inflate/lib/index.js": {
+      "bytes": 94,
+      "imports": [
+        {
+          "path": "node_modules/@tokenizer/inflate/lib/ZipHandler.js",
+          "kind": "import-statement",
+          "original": "./ZipHandler.js"
+        },
+        {
+          "path": "node_modules/@tokenizer/inflate/lib/GzipHandler.js",
+          "kind": "import-statement",
+          "original": "./GzipHandler.js"
+        }
+      ],
+      "format": "esm"
+    },
+    "node_modules/file-type/source/tokens.js": {
+      "bytes": 1883,
+      "imports": [
+        {
+          "path": "node_modules/token-types/lib/index.js",
+          "kind": "import-statement",
+          "original": "token-types"
+        }
+      ],
+      "format": "esm"
+    },
+    "node_modules/file-type/source/supported.js": {
+      "bytes": 6681,
+      "imports": [],
+      "format": "esm"
+    },
+    "node_modules/file-type/source/parser.js": {
+      "bytes": 1744,
+      "imports": [],
+      "format": "esm"
+    },
+    "node_modules/file-type/source/detectors/zip.js": {
+      "bytes": 20094,
+      "imports": [
+        {
+          "path": "node_modules/token-types/lib/index.js",
+          "kind": "import-statement",
+          "original": "token-types"
+        },
+        {
+          "path": "node_modules/strtok3/lib/core.js",
+          "kind": "import-statement",
+          "original": "strtok3/core"
+        },
+        {
+          "path": "node_modules/@tokenizer/inflate/lib/index.js",
+          "kind": "import-statement",
+          "original": "@tokenizer/inflate"
+        },
+        {
+          "path": "node_modules/file-type/source/parser.js",
+          "kind": "import-statement",
+          "original": "../parser.js"
+        }
+      ],
+      "format": "esm"
+    },
+    "node_modules/file-type/source/detectors/ebml.js": {
+      "bytes": 3134,
+      "imports": [
+        {
+          "path": "node_modules/token-types/lib/index.js",
+          "kind": "import-statement",
+          "original": "token-types"
+        },
+        {
+          "path": "node_modules/uint8array-extras/index.js",
+          "kind": "import-statement",
+          "original": "uint8array-extras"
+        },
+        {
+          "path": "node_modules/file-type/source/parser.js",
+          "kind": "import-statement",
+          "original": "../parser.js"
+        }
+      ],
+      "format": "esm"
+    },
+    "node_modules/file-type/source/detectors/png.js": {
+      "bytes": 3064,
+      "imports": [
+        {
+          "path": "node_modules/token-types/lib/index.js",
+          "kind": "import-statement",
+          "original": "token-types"
+        },
+        {
+          "path": "node_modules/strtok3/lib/core.js",
+          "kind": "import-statement",
+          "original": "strtok3/core"
+        },
+        {
+          "path": "node_modules/file-type/source/parser.js",
+          "kind": "import-statement",
+          "original": "../parser.js"
+        }
+      ],
+      "format": "esm"
+    },
+    "node_modules/file-type/source/detectors/asf.js": {
+      "bytes": 3221,
+      "imports": [
+        {
+          "path": "node_modules/token-types/lib/index.js",
+          "kind": "import-statement",
+          "original": "token-types"
+        },
+        {
+          "path": "node_modules/strtok3/lib/core.js",
+          "kind": "import-statement",
+          "original": "strtok3/core"
+        },
+        {
+          "path": "node_modules/file-type/source/parser.js",
+          "kind": "import-statement",
+          "original": "../parser.js"
+        }
+      ],
+      "format": "esm"
+    },
+    "node_modules/file-type/source/index.js": {
+      "bytes": 47035,
+      "imports": [
+        {
+          "path": "node_modules/token-types/lib/index.js",
+          "kind": "import-statement",
+          "original": "token-types"
+        },
+        {
+          "path": "node_modules/strtok3/lib/core.js",
+          "kind": "import-statement",
+          "original": "strtok3/core"
+        },
+        {
+          "path": "node_modules/@tokenizer/inflate/lib/index.js",
+          "kind": "import-statement",
+          "original": "@tokenizer/inflate"
+        },
+        {
+          "path": "node_modules/uint8array-extras/index.js",
+          "kind": "import-statement",
+          "original": "uint8array-extras"
+        },
+        {
+          "path": "node_modules/file-type/source/tokens.js",
+          "kind": "import-statement",
+          "original": "./tokens.js"
+        },
+        {
+          "path": "node_modules/file-type/source/supported.js",
+          "kind": "import-statement",
+          "original": "./supported.js"
+        },
+        {
+          "path": "node_modules/file-type/source/parser.js",
+          "kind": "import-statement",
+          "original": "./parser.js"
+        },
+        {
+          "path": "node_modules/file-type/source/detectors/zip.js",
+          "kind": "import-statement",
+          "original": "./detectors/zip.js"
+        },
+        {
+          "path": "node_modules/file-type/source/detectors/ebml.js",
+          "kind": "import-statement",
+          "original": "./detectors/ebml.js"
+        },
+        {
+          "path": "node_modules/file-type/source/detectors/png.js",
+          "kind": "import-statement",
+          "original": "./detectors/png.js"
+        },
+        {
+          "path": "node_modules/file-type/source/detectors/asf.js",
+          "kind": "import-statement",
+          "original": "./detectors/asf.js"
+        }
+      ],
+      "format": "esm"
+    },
+    "node_modules/media-typer/dist/index.js": {
+      "bytes": 2156,
+      "imports": [],
+      "format": "esm"
+    },
+    "node_modules/music-metadata/lib/id3v2/ID3v2ChapterToken.js": {
+      "bytes": 572,
+      "imports": [
+        {
+          "path": "node_modules/token-types/lib/index.js",
+          "kind": "import-statement",
+          "original": "token-types"
+        }
+      ],
+      "format": "esm"
+    },
+    "node_modules/music-metadata/lib/id3v2/ID3v2Token.js": {
+      "bytes": 4153,
+      "imports": [
+        {
+          "path": "node_modules/token-types/lib/index.js",
+          "kind": "import-statement",
+          "original": "token-types"
+        },
+        {
+          "path": "node_modules/music-metadata/lib/common/Util.js",
+          "kind": "import-statement",
+          "original": "../common/Util.js"
+        }
+      ],
+      "format": "esm"
+    },
+    "node_modules/music-metadata/lib/id3v2/FrameParser.js": {
+      "bytes": 21325,
+      "imports": [
+        {
+          "path": "node_modules/debug/src/index.js",
+          "kind": "import-statement",
+          "original": "debug"
+        },
+        {
+          "path": "node_modules/token-types/lib/index.js",
+          "kind": "import-statement",
+          "original": "token-types"
+        },
+        {
+          "path": "node_modules/music-metadata/lib/common/Util.js",
+          "kind": "import-statement",
+          "original": "../common/Util.js"
+        },
+        {
+          "path": "node_modules/music-metadata/lib/common/Util.js",
+          "kind": "import-statement",
+          "original": "../common/Util.js"
+        },
+        {
+          "path": "node_modules/music-metadata/lib/id3v1/ID3v1Parser.js",
+          "kind": "import-statement",
+          "original": "../id3v1/ID3v1Parser.js"
+        },
+        {
+          "path": "node_modules/music-metadata/lib/ParseError.js",
+          "kind": "import-statement",
+          "original": "../ParseError.js"
+        },
+        {
+          "path": "node_modules/music-metadata/lib/id3v2/FrameHeader.js",
+          "kind": "import-statement",
+          "original": "./FrameHeader.js"
+        },
+        {
+          "path": "node_modules/music-metadata/lib/id3v2/ID3v2ChapterToken.js",
+          "kind": "import-statement",
+          "original": "./ID3v2ChapterToken.js"
+        },
+        {
+          "path": "node_modules/music-metadata/lib/id3v2/ID3v2Token.js",
+          "kind": "import-statement",
+          "original": "./ID3v2Token.js"
+        }
+      ],
+      "format": "esm"
+    },
+    "node_modules/music-metadata/lib/id3v2/FrameHeader.js": {
+      "bytes": 3618,
+      "imports": [
+        {
+          "path": "node_modules/@borewit/text-codec/lib/index.js",
+          "kind": "import-statement",
+          "original": "@borewit/text-codec"
+        },
+        {
+          "path": "node_modules/token-types/lib/index.js",
+          "kind": "import-statement",
+          "original": "token-types"
+        },
+        {
+          "path": "node_modules/music-metadata/lib/common/Util.js",
+          "kind": "import-statement",
+          "original": "../common/Util.js"
+        },
+        {
+          "path": "node_modules/music-metadata/lib/id3v2/FrameParser.js",
+          "kind": "import-statement",
+          "original": "./FrameParser.js"
+        },
+        {
+          "path": "node_modules/music-metadata/lib/id3v2/ID3v2Token.js",
+          "kind": "import-statement",
+          "original": "./ID3v2Token.js"
+        }
+      ],
+      "format": "esm"
+    },
+    "node_modules/music-metadata/lib/id3v2/ID3v2Parser.js": {
+      "bytes": 7739,
+      "imports": [
+        {
+          "path": "node_modules/token-types/lib/index.js",
+          "kind": "import-statement",
+          "original": "token-types"
+        },
+        {
+          "path": "node_modules/music-metadata/lib/id3v2/FrameHeader.js",
+          "kind": "import-statement",
+          "original": "./FrameHeader.js"
+        },
+        {
+          "path": "node_modules/music-metadata/lib/id3v2/FrameParser.js",
+          "kind": "import-statement",
+          "original": "./FrameParser.js"
+        },
+        {
+          "path": "node_modules/music-metadata/lib/id3v2/ID3v2Token.js",
+          "kind": "import-statement",
+          "original": "./ID3v2Token.js"
+        }
+      ],
+      "format": "esm"
+    },
+    "node_modules/music-metadata/lib/iff/index.js": {
+      "bytes": 399,
+      "imports": [
+        {
+          "path": "node_modules/token-types/lib/index.js",
+          "kind": "import-statement",
+          "original": "token-types"
+        },
+        {
+          "path": "node_modules/music-metadata/lib/common/FourCC.js",
+          "kind": "import-statement",
+          "original": "../common/FourCC.js"
+        }
+      ],
+      "format": "esm"
+    },
+    "node_modules/music-metadata/lib/aiff/AiffToken.js": {
+      "bytes": 2465,
+      "imports": [
+        {
+          "path": "node_modules/token-types/lib/index.js",
+          "kind": "import-statement",
+          "original": "token-types"
+        },
+        {
+          "path": "node_modules/music-metadata/lib/common/FourCC.js",
+          "kind": "import-statement",
+          "original": "../common/FourCC.js"
+        },
+        {
+          "path": "node_modules/music-metadata/lib/ParseError.js",
+          "kind": "import-statement",
+          "original": "../ParseError.js"
+        }
+      ],
+      "format": "esm"
+    },
+    "node_modules/music-metadata/lib/aiff/AiffParser.js": {
+      "bytes": 4858,
+      "imports": [
+        {
+          "path": "node_modules/debug/src/index.js",
+          "kind": "import-statement",
+          "original": "debug"
+        },
+        {
+          "path": "node_modules/strtok3/lib/index.js",
+          "kind": "import-statement",
+          "original": "strtok3"
+        },
+        {
+          "path": "node_modules/token-types/lib/index.js",
+          "kind": "import-statement",
+          "original": "token-types"
+        },
+        {
+          "path": "node_modules/music-metadata/lib/common/BasicParser.js",
+          "kind": "import-statement",
+          "original": "../common/BasicParser.js"
+        },
+        {
+          "path": "node_modules/music-metadata/lib/common/FourCC.js",
+          "kind": "import-statement",
+          "original": "../common/FourCC.js"
+        },
+        {
+          "path": "node_modules/music-metadata/lib/id3v2/ID3v2Parser.js",
+          "kind": "import-statement",
+          "original": "../id3v2/ID3v2Parser.js"
+        },
+        {
+          "path": "node_modules/music-metadata/lib/iff/index.js",
+          "kind": "import-statement",
+          "original": "../iff/index.js"
+        },
+        {
+          "path": "node_modules/music-metadata/lib/aiff/AiffToken.js",
+          "kind": "import-statement",
+          "original": "./AiffToken.js"
+        },
+        {
+          "path": "node_modules/music-metadata/lib/aiff/AiffToken.js",
+          "kind": "import-statement",
+          "original": "./AiffToken.js"
+        }
+      ],
+      "format": "esm"
+    },
+    "node_modules/music-metadata/lib/aiff/AiffLoader.js": {
+      "bytes": 267,
+      "imports": [
+        {
+          "path": "node_modules/music-metadata/lib/aiff/AiffParser.js",
+          "kind": "dynamic-import",
+          "original": "./AiffParser.js"
+        }
+      ],
+      "format": "esm"
+    },
+    "node_modules/music-metadata/lib/apev2/Apev2Loader.js": {
+      "bytes": 228,
+      "imports": [
+        {
+          "path": "node_modules/music-metadata/lib/apev2/APEv2Parser.js",
+          "kind": "dynamic-import",
+          "original": "./APEv2Parser.js"
+        }
+      ],
+      "format": "esm"
+    },
+    "node_modules/music-metadata/lib/matroska/types.js": {
+      "bytes": 589,
+      "imports": [],
+      "format": "esm"
+    },
+    "node_modules/music-metadata/lib/type.js": {
+      "bytes": 149,
+      "imports": [
+        {
+          "path": "node_modules/music-metadata/lib/id3v2/ID3v2Token.js",
+          "kind": "import-statement",
+          "original": "./id3v2/ID3v2Token.js"
+        },
+        {
+          "path": "node_modules/music-metadata/lib/matroska/types.js",
+          "kind": "import-statement",
+          "original": "./matroska/types.js"
+        }
+      ],
+      "format": "esm"
+    },
+    "node_modules/win-guid/lib/guid.js": {
+      "bytes": 3620,
+      "imports": [],
+      "format": "esm"
+    },
+    "node_modules/music-metadata/lib/asf/AsfGuid.js": {
+      "bytes": 6123,
+      "imports": [
+        {
+          "path": "node_modules/win-guid/lib/guid.js",
+          "kind": "import-statement",
+          "original": "win-guid"
+        }
+      ],
+      "format": "esm"
+    },
+    "node_modules/music-metadata/lib/asf/AsfUtil.js": {
+      "bytes": 877,
+      "imports": [
+        {
+          "path": "node_modules/token-types/lib/index.js",
+          "kind": "import-statement",
+          "original": "token-types"
+        },
+        {
+          "path": "node_modules/music-metadata/lib/common/Util.js",
+          "kind": "import-statement",
+          "original": "../common/Util.js"
+        }
+      ],
+      "format": "esm"
+    },
+    "node_modules/music-metadata/lib/asf/AsfObject.js": {
+      "bytes": 14455,
+      "imports": [
+        {
+          "path": "node_modules/token-types/lib/index.js",
+          "kind": "import-statement",
+          "original": "token-types"
+        },
+        {
+          "path": "node_modules/music-metadata/lib/common/Util.js",
+          "kind": "import-statement",
+          "original": "../common/Util.js"
+        },
+        {
+          "path": "node_modules/music-metadata/lib/id3v2/ID3v2Token.js",
+          "kind": "import-statement",
+          "original": "../id3v2/ID3v2Token.js"
+        },
+        {
+          "path": "node_modules/music-metadata/lib/ParseError.js",
+          "kind": "import-statement",
+          "original": "../ParseError.js"
+        },
+        {
+          "path": "node_modules/music-metadata/lib/asf/AsfGuid.js",
+          "kind": "import-statement",
+          "original": "./AsfGuid.js"
+        },
+        {
+          "path": "node_modules/music-metadata/lib/asf/AsfUtil.js",
+          "kind": "import-statement",
+          "original": "./AsfUtil.js"
+        }
+      ],
+      "format": "esm"
+    },
+    "node_modules/music-metadata/lib/asf/AsfParser.js": {
+      "bytes": 11479,
+      "imports": [
+        {
+          "path": "node_modules/debug/src/index.js",
+          "kind": "import-statement",
+          "original": "debug"
+        },
+        {
+          "path": "node_modules/strtok3/lib/index.js",
+          "kind": "import-statement",
+          "original": "strtok3"
+        },
+        {
+          "path": "node_modules/music-metadata/lib/common/BasicParser.js",
+          "kind": "import-statement",
+          "original": "../common/BasicParser.js"
+        },
+        {
+          "path": "node_modules/music-metadata/lib/type.js",
+          "kind": "import-statement",
+          "original": "../type.js"
+        },
+        {
+          "path": "node_modules/music-metadata/lib/asf/AsfGuid.js",
+          "kind": "import-statement",
+          "original": "./AsfGuid.js"
+        },
+        {
+          "path": "node_modules/music-metadata/lib/asf/AsfObject.js",
+          "kind": "import-statement",
+          "original": "./AsfObject.js"
+        },
+        {
+          "path": "node_modules/music-metadata/lib/asf/AsfObject.js",
+          "kind": "import-statement",
+          "original": "./AsfObject.js"
+        }
+      ],
+      "format": "esm"
+    },
+    "node_modules/music-metadata/lib/asf/AsfLoader.js": {
+      "bytes": 292,
+      "imports": [
+        {
+          "path": "node_modules/music-metadata/lib/asf/AsfParser.js",
+          "kind": "dynamic-import",
+          "original": "./AsfParser.js"
+        }
+      ],
+      "format": "esm"
+    },
+    "node_modules/music-metadata/lib/lrc/LyricsParser.js": {
+      "bytes": 1495,
+      "imports": [
+        {
+          "path": "node_modules/music-metadata/lib/type.js",
+          "kind": "import-statement",
+          "original": "../type.js"
+        }
+      ],
+      "format": "esm"
+    },
+    "node_modules/music-metadata/lib/common/GenericTagMapper.js": {
+      "bytes": 1610,
+      "imports": [],
+      "format": "esm"
+    },
+    "node_modules/music-metadata/lib/aiff/AiffTagMap.js": {
+      "bytes": 313,
+      "imports": [
+        {
+          "path": "node_modules/music-metadata/lib/common/GenericTagMapper.js",
+          "kind": "import-statement",
+          "original": "../common/GenericTagMapper.js"
+        }
+      ],
+      "format": "esm"
+    },
+    "node_modules/music-metadata/lib/common/CaseInsensitiveTagMap.js": {
+      "bytes": 516,
+      "imports": [
+        {
+          "path": "node_modules/music-metadata/lib/common/GenericTagMapper.js",
+          "kind": "import-statement",
+          "original": "./GenericTagMapper.js"
+        }
+      ],
+      "format": "esm"
+    },
+    "node_modules/music-metadata/lib/apev2/APEv2TagMapper.js": {
+      "bytes": 2627,
+      "imports": [
+        {
+          "path": "node_modules/music-metadata/lib/common/CaseInsensitiveTagMap.js",
+          "kind": "import-statement",
+          "original": "../common/CaseInsensitiveTagMap.js"
+        }
+      ],
+      "format": "esm"
+    },
+    "node_modules/music-metadata/lib/asf/AsfTagMapper.js": {
+      "bytes": 4043,
+      "imports": [
+        {
+          "path": "node_modules/music-metadata/lib/common/GenericTagMapper.js",
+          "kind": "import-statement",
+          "original": "../common/GenericTagMapper.js"
+        }
+      ],
+      "format": "esm"
+    },
+    "node_modules/music-metadata/lib/id3v1/ID3v1TagMap.js": {
+      "bytes": 384,
+      "imports": [
+        {
+          "path": "node_modules/music-metadata/lib/common/GenericTagMapper.js",
+          "kind": "import-statement",
+          "original": "../common/GenericTagMapper.js"
+        }
+      ],
+      "format": "esm"
+    },
+    "node_modules/music-metadata/lib/id3v2/ID3v22TagMapper.js": {
+      "bytes": 1009,
+      "imports": [
+        {
+          "path": "node_modules/music-metadata/lib/common/CaseInsensitiveTagMap.js",
+          "kind": "import-statement",
+          "original": "../common/CaseInsensitiveTagMap.js"
+        }
+      ],
+      "format": "esm"
+    },
+    "node_modules/music-metadata/lib/id3v2/ID3v24TagMapper.js": {
+      "bytes": 6887,
+      "imports": [
+        {
+          "path": "node_modules/token-types/lib/index.js",
+          "kind": "import-statement",
+          "original": "token-types"
+        },
+        {
+          "path": "node_modules/music-metadata/lib/common/CaseInsensitiveTagMap.js",
+          "kind": "import-statement",
+          "original": "../common/CaseInsensitiveTagMap.js"
+        },
+        {
+          "path": "node_modules/music-metadata/lib/common/GenericTagMapper.js",
+          "kind": "import-statement",
+          "original": "../common/GenericTagMapper.js"
+        },
+        {
+          "path": "node_modules/music-metadata/lib/common/Util.js",
+          "kind": "import-statement",
+          "original": "../common/Util.js"
+        }
+      ],
+      "format": "esm"
+    },
+    "node_modules/music-metadata/lib/matroska/MatroskaTagMapper.js": {
+      "bytes": 1060,
+      "imports": [
+        {
+          "path": "node_modules/music-metadata/lib/common/CaseInsensitiveTagMap.js",
+          "kind": "import-statement",
+          "original": "../common/CaseInsensitiveTagMap.js"
+        }
+      ],
+      "format": "esm"
+    },
+    "node_modules/music-metadata/lib/mp4/MP4TagMapper.js": {
+      "bytes": 4883,
+      "imports": [
+        {
+          "path": "node_modules/music-metadata/lib/common/CaseInsensitiveTagMap.js",
+          "kind": "import-statement",
+          "original": "../common/CaseInsensitiveTagMap.js"
+        }
+      ],
+      "format": "esm"
+    },
+    "node_modules/music-metadata/lib/ogg/vorbis/VorbisTagMapper.js": {
+      "bytes": 4646,
+      "imports": [
+        {
+          "path": "node_modules/music-metadata/lib/common/GenericTagMapper.js",
+          "kind": "import-statement",
+          "original": "../../common/GenericTagMapper.js"
+        }
+      ],
+      "format": "esm"
+    },
+    "node_modules/music-metadata/lib/riff/RiffInfoTagMap.js": {
+      "bytes": 1050,
+      "imports": [
+        {
+          "path": "node_modules/music-metadata/lib/common/GenericTagMapper.js",
+          "kind": "import-statement",
+          "original": "../common/GenericTagMapper.js"
+        }
+      ],
+      "format": "esm"
+    },
+    "node_modules/music-metadata/lib/common/CombinedTagMapper.js": {
+      "bytes": 1948,
+      "imports": [
+        {
+          "path": "node_modules/music-metadata/lib/aiff/AiffTagMap.js",
+          "kind": "import-statement",
+          "original": "../aiff/AiffTagMap.js"
+        },
+        {
+          "path": "node_modules/music-metadata/lib/apev2/APEv2TagMapper.js",
+          "kind": "import-statement",
+          "original": "../apev2/APEv2TagMapper.js"
+        },
+        {
+          "path": "node_modules/music-metadata/lib/asf/AsfTagMapper.js",
+          "kind": "import-statement",
+          "original": "../asf/AsfTagMapper.js"
+        },
+        {
+          "path": "node_modules/music-metadata/lib/id3v1/ID3v1TagMap.js",
+          "kind": "import-statement",
+          "original": "../id3v1/ID3v1TagMap.js"
+        },
+        {
+          "path": "node_modules/music-metadata/lib/id3v2/ID3v22TagMapper.js",
+          "kind": "import-statement",
+          "original": "../id3v2/ID3v22TagMapper.js"
+        },
+        {
+          "path": "node_modules/music-metadata/lib/id3v2/ID3v24TagMapper.js",
+          "kind": "import-statement",
+          "original": "../id3v2/ID3v24TagMapper.js"
+        },
+        {
+          "path": "node_modules/music-metadata/lib/matroska/MatroskaTagMapper.js",
+          "kind": "import-statement",
+          "original": "../matroska/MatroskaTagMapper.js"
+        },
+        {
+          "path": "node_modules/music-metadata/lib/mp4/MP4TagMapper.js",
+          "kind": "import-statement",
+          "original": "../mp4/MP4TagMapper.js"
+        },
+        {
+          "path": "node_modules/music-metadata/lib/ogg/vorbis/VorbisTagMapper.js",
+          "kind": "import-statement",
+          "original": "../ogg/vorbis/VorbisTagMapper.js"
+        },
+        {
+          "path": "node_modules/music-metadata/lib/ParseError.js",
+          "kind": "import-statement",
+          "original": "../ParseError.js"
+        },
+        {
+          "path": "node_modules/music-metadata/lib/riff/RiffInfoTagMap.js",
+          "kind": "import-statement",
+          "original": "../riff/RiffInfoTagMap.js"
+        }
+      ],
+      "format": "esm"
+    },
+    "node_modules/music-metadata/lib/common/GenericTagTypes.js": {
+      "bytes": 4900,
+      "imports": [],
+      "format": "esm"
+    },
+    "node_modules/music-metadata/lib/common/MetadataCollector.js": {
+      "bytes": 12487,
+      "imports": [
+        {
+          "path": "node_modules/debug/src/index.js",
+          "kind": "import-statement",
+          "original": "debug"
+        },
+        {
+          "path": "node_modules/file-type/source/index.js",
+          "kind": "import-statement",
+          "original": "file-type"
+        },
+        {
+          "path": "node_modules/music-metadata/lib/lrc/LyricsParser.js",
+          "kind": "import-statement",
+          "original": "../lrc/LyricsParser.js"
+        },
+        {
+          "path": "node_modules/music-metadata/lib/type.js",
+          "kind": "import-statement",
+          "original": "../type.js"
+        },
+        {
+          "path": "node_modules/music-metadata/lib/common/CombinedTagMapper.js",
+          "kind": "import-statement",
+          "original": "./CombinedTagMapper.js"
+        },
+        {
+          "path": "node_modules/music-metadata/lib/common/GenericTagMapper.js",
+          "kind": "import-statement",
+          "original": "./GenericTagMapper.js"
+        },
+        {
+          "path": "node_modules/music-metadata/lib/common/GenericTagTypes.js",
+          "kind": "import-statement",
+          "original": "./GenericTagTypes.js"
+        },
+        {
+          "path": "node_modules/music-metadata/lib/common/Util.js",
+          "kind": "import-statement",
+          "original": "./Util.js"
+        }
+      ],
+      "format": "esm"
+    },
+    "node_modules/music-metadata/lib/dsdiff/DsdiffToken.js": {
+      "bytes": 491,
+      "imports": [
+        {
+          "path": "node_modules/token-types/lib/index.js",
+          "kind": "import-statement",
+          "original": "token-types"
+        },
+        {
+          "path": "node_modules/music-metadata/lib/common/FourCC.js",
+          "kind": "import-statement",
+          "original": "../common/FourCC.js"
+        }
+      ],
+      "format": "esm"
+    },
+    "node_modules/music-metadata/lib/dsdiff/DsdiffParser.js": {
+      "bytes": 8396,
+      "imports": [
+        {
+          "path": "node_modules/debug/src/index.js",
+          "kind": "import-statement",
+          "original": "debug"
+        },
+        {
+          "path": "node_modules/strtok3/lib/index.js",
+          "kind": "import-statement",
+          "original": "strtok3"
+        },
+        {
+          "path": "node_modules/token-types/lib/index.js",
+          "kind": "import-statement",
+          "original": "token-types"
+        },
+        {
+          "path": "node_modules/music-metadata/lib/common/BasicParser.js",
+          "kind": "import-statement",
+          "original": "../common/BasicParser.js"
+        },
+        {
+          "path": "node_modules/music-metadata/lib/common/FourCC.js",
+          "kind": "import-statement",
+          "original": "../common/FourCC.js"
+        },
+        {
+          "path": "node_modules/music-metadata/lib/id3v2/ID3v2Parser.js",
+          "kind": "import-statement",
+          "original": "../id3v2/ID3v2Parser.js"
+        },
+        {
+          "path": "node_modules/music-metadata/lib/ParseError.js",
+          "kind": "import-statement",
+          "original": "../ParseError.js"
+        },
+        {
+          "path": "node_modules/music-metadata/lib/dsdiff/DsdiffToken.js",
+          "kind": "import-statement",
+          "original": "./DsdiffToken.js"
+        }
+      ],
+      "format": "esm"
+    },
+    "node_modules/music-metadata/lib/dsdiff/DsdiffLoader.js": {
+      "bytes": 224,
+      "imports": [
+        {
+          "path": "node_modules/music-metadata/lib/dsdiff/DsdiffParser.js",
+          "kind": "dynamic-import",
+          "original": "./DsdiffParser.js"
+        }
+      ],
+      "format": "esm"
+    },
+    "node_modules/music-metadata/lib/id3v2/AbstractID3Parser.js": {
+      "bytes": 1830,
+      "imports": [
+        {
+          "path": "node_modules/debug/src/index.js",
+          "kind": "import-statement",
+          "original": "debug"
+        },
+        {
+          "path": "node_modules/strtok3/lib/index.js",
+          "kind": "import-statement",
+          "original": "strtok3"
+        },
+        {
+          "path": "node_modules/music-metadata/lib/common/BasicParser.js",
+          "kind": "import-statement",
+          "original": "../common/BasicParser.js"
+        },
+        {
+          "path": "node_modules/music-metadata/lib/id3v1/ID3v1Parser.js",
+          "kind": "import-statement",
+          "original": "../id3v1/ID3v1Parser.js"
+        },
+        {
+          "path": "node_modules/music-metadata/lib/id3v2/ID3v2Parser.js",
+          "kind": "import-statement",
+          "original": "./ID3v2Parser.js"
+        },
+        {
+          "path": "node_modules/music-metadata/lib/id3v2/ID3v2Token.js",
+          "kind": "import-statement",
+          "original": "./ID3v2Token.js"
+        }
+      ],
+      "format": "esm"
+    },
+    "node_modules/music-metadata/lib/dsf/DsfChunk.js": {
+      "bytes": 1445,
+      "imports": [
+        {
+          "path": "node_modules/token-types/lib/index.js",
+          "kind": "import-statement",
+          "original": "token-types"
+        },
+        {
+          "path": "node_modules/music-metadata/lib/common/FourCC.js",
+          "kind": "import-statement",
+          "original": "../common/FourCC.js"
+        }
+      ],
+      "format": "esm"
+    },
+    "node_modules/music-metadata/lib/dsf/DsfParser.js": {
+      "bytes": 4346,
+      "imports": [
+        {
+          "path": "node_modules/debug/src/index.js",
+          "kind": "import-statement",
+          "original": "debug"
+        },
+        {
+          "path": "node_modules/music-metadata/lib/id3v2/AbstractID3Parser.js",
+          "kind": "import-statement",
+          "original": "../id3v2/AbstractID3Parser.js"
+        },
+        {
+          "path": "node_modules/music-metadata/lib/id3v2/ID3v2Parser.js",
+          "kind": "import-statement",
+          "original": "../id3v2/ID3v2Parser.js"
+        },
+        {
+          "path": "node_modules/music-metadata/lib/id3v2/ID3v2Token.js",
+          "kind": "import-statement",
+          "original": "../id3v2/ID3v2Token.js"
+        },
+        {
+          "path": "node_modules/music-metadata/lib/ParseError.js",
+          "kind": "import-statement",
+          "original": "../ParseError.js"
+        },
+        {
+          "path": "node_modules/music-metadata/lib/dsf/DsfChunk.js",
+          "kind": "import-statement",
+          "original": "./DsfChunk.js"
+        }
+      ],
+      "format": "esm"
+    },
+    "node_modules/music-metadata/lib/dsf/DsfLoader.js": {
+      "bytes": 199,
+      "imports": [
+        {
+          "path": "node_modules/music-metadata/lib/dsf/DsfParser.js",
+          "kind": "dynamic-import",
+          "original": "./DsfParser.js"
+        }
+      ],
+      "format": "esm"
+    },
+    "node_modules/music-metadata/lib/ogg/vorbis/Vorbis.js": {
+      "bytes": 2844,
+      "imports": [
+        {
+          "path": "node_modules/token-types/lib/index.js",
+          "kind": "import-statement",
+          "original": "token-types"
+        },
+        {
+          "path": "node_modules/music-metadata/lib/id3v2/ID3v2Token.js",
+          "kind": "import-statement",
+          "original": "../../id3v2/ID3v2Token.js"
+        }
+      ],
+      "format": "esm"
+    },
+    "node_modules/music-metadata/lib/ogg/vorbis/VorbisDecoder.js": {
+      "bytes": 891,
+      "imports": [
+        {
+          "path": "node_modules/@borewit/text-codec/lib/index.js",
+          "kind": "import-statement",
+          "original": "@borewit/text-codec"
+        },
+        {
+          "path": "node_modules/token-types/lib/index.js",
+          "kind": "import-statement",
+          "original": "token-types"
+        }
+      ],
+      "format": "esm"
+    },
+    "node_modules/music-metadata/lib/ogg/vorbis/VorbisStream.js": {
+      "bytes": 5865,
+      "imports": [
+        {
+          "path": "node_modules/debug/src/index.js",
+          "kind": "import-statement",
+          "original": "debug"
+        },
+        {
+          "path": "node_modules/token-types/lib/index.js",
+          "kind": "import-statement",
+          "original": "token-types"
+        },
+        {
+          "path": "node_modules/music-metadata/lib/ParseError.js",
+          "kind": "import-statement",
+          "original": "../../ParseError.js"
+        },
+        {
+          "path": "node_modules/music-metadata/lib/ogg/vorbis/Vorbis.js",
+          "kind": "import-statement",
+          "original": "./Vorbis.js"
+        },
+        {
+          "path": "node_modules/music-metadata/lib/ogg/vorbis/VorbisDecoder.js",
+          "kind": "import-statement",
+          "original": "./VorbisDecoder.js"
+        }
+      ],
+      "format": "esm"
+    },
+    "node_modules/music-metadata/lib/flac/FlacToken.js": {
+      "bytes": 2969,
+      "imports": [
+        {
+          "path": "node_modules/token-types/lib/index.js",
+          "kind": "import-statement",
+          "original": "token-types"
+        },
+        {
+          "path": "node_modules/music-metadata/lib/common/Util.js",
+          "kind": "import-statement",
+          "original": "../common/Util.js"
+        }
+      ],
+      "format": "esm"
+    },
+    "node_modules/music-metadata/lib/flac/FlacParser.js": {
+      "bytes": 5019,
+      "imports": [
+        {
+          "path": "node_modules/debug/src/index.js",
+          "kind": "import-statement",
+          "original": "debug"
+        },
+        {
+          "path": "node_modules/token-types/lib/index.js",
+          "kind": "import-statement",
+          "original": "token-types"
+        },
+        {
+          "path": "node_modules/music-metadata/lib/common/FourCC.js",
+          "kind": "import-statement",
+          "original": "../common/FourCC.js"
+        },
+        {
+          "path": "node_modules/music-metadata/lib/id3v2/AbstractID3Parser.js",
+          "kind": "import-statement",
+          "original": "../id3v2/AbstractID3Parser.js"
+        },
+        {
+          "path": "node_modules/music-metadata/lib/ogg/vorbis/Vorbis.js",
+          "kind": "import-statement",
+          "original": "../ogg/vorbis/Vorbis.js"
+        },
+        {
+          "path": "node_modules/music-metadata/lib/ogg/vorbis/VorbisDecoder.js",
+          "kind": "import-statement",
+          "original": "../ogg/vorbis/VorbisDecoder.js"
+        },
+        {
+          "path": "node_modules/music-metadata/lib/ogg/vorbis/VorbisStream.js",
+          "kind": "import-statement",
+          "original": "../ogg/vorbis/VorbisStream.js"
+        },
+        {
+          "path": "node_modules/music-metadata/lib/ParseError.js",
+          "kind": "import-statement",
+          "original": "../ParseError.js"
+        },
+        {
+          "path": "node_modules/music-metadata/lib/flac/FlacToken.js",
+          "kind": "import-statement",
+          "original": "./FlacToken.js"
+        }
+      ],
+      "format": "esm"
+    },
+    "node_modules/music-metadata/lib/flac/FlacLoader.js": {
+      "bytes": 205,
+      "imports": [
+        {
+          "path": "node_modules/music-metadata/lib/flac/FlacParser.js",
+          "kind": "dynamic-import",
+          "original": "./FlacParser.js"
+        }
+      ],
+      "format": "esm"
+    },
+    "node_modules/music-metadata/lib/ebml/types.js": {
+      "bytes": 110,
+      "imports": [],
+      "format": "esm"
+    },
+    "node_modules/music-metadata/lib/ebml/EbmlIterator.js": {
+      "bytes": 10843,
+      "imports": [
+        {
+          "path": "node_modules/debug/src/index.js",
+          "kind": "import-statement",
+          "original": "debug"
+        },
+        {
+          "path": "node_modules/strtok3/lib/index.js",
+          "kind": "import-statement",
+          "original": "strtok3"
+        },
+        {
+          "path": "node_modules/token-types/lib/index.js",
+          "kind": "import-statement",
+          "original": "token-types"
+        },
+        {
+          "path": "node_modules/token-types/lib/index.js",
+          "kind": "import-statement",
+          "original": "token-types"
+        },
+        {
+          "path": "node_modules/music-metadata/lib/ParseError.js",
+          "kind": "import-statement",
+          "original": "../ParseError.js"
+        },
+        {
+          "path": "node_modules/music-metadata/lib/ebml/types.js",
+          "kind": "import-statement",
+          "original": "./types.js"
+        }
+      ],
+      "format": "esm"
+    },
+    "node_modules/music-metadata/lib/matroska/MatroskaDtd.js": {
+      "bytes": 16799,
+      "imports": [
+        {
+          "path": "node_modules/music-metadata/lib/ebml/types.js",
+          "kind": "import-statement",
+          "original": "../ebml/types.js"
+        }
+      ],
+      "format": "esm"
+    },
+    "node_modules/music-metadata/lib/matroska/MatroskaParser.js": {
+      "bytes": 7908,
+      "imports": [
+        {
+          "path": "node_modules/debug/src/index.js",
+          "kind": "import-statement",
+          "original": "debug"
+        },
+        {
+          "path": "node_modules/music-metadata/lib/common/BasicParser.js",
+          "kind": "import-statement",
+          "original": "../common/BasicParser.js"
+        },
+        {
+          "path": "node_modules/music-metadata/lib/ebml/EbmlIterator.js",
+          "kind": "import-statement",
+          "original": "../ebml/EbmlIterator.js"
+        },
+        {
+          "path": "node_modules/music-metadata/lib/matroska/MatroskaDtd.js",
+          "kind": "import-statement",
+          "original": "./MatroskaDtd.js"
+        },
+        {
+          "path": "node_modules/music-metadata/lib/matroska/types.js",
+          "kind": "import-statement",
+          "original": "./types.js"
+        }
+      ],
+      "format": "esm"
+    },
+    "node_modules/music-metadata/lib/matroska/MatroskaLoader.js": {
+      "bytes": 303,
+      "imports": [
+        {
+          "path": "node_modules/music-metadata/lib/matroska/MatroskaParser.js",
+          "kind": "dynamic-import",
+          "original": "./MatroskaParser.js"
+        }
+      ],
+      "format": "esm"
+    },
+    "node_modules/music-metadata/lib/mp4/AtomToken.js": {
+      "bytes": 22933,
+      "imports": [
+        {
+          "path": "node_modules/debug/src/index.js",
+          "kind": "import-statement",
+          "original": "debug"
+        },
+        {
+          "path": "node_modules/token-types/lib/index.js",
+          "kind": "import-statement",
+          "original": "token-types"
+        },
+        {
+          "path": "node_modules/music-metadata/lib/common/FourCC.js",
+          "kind": "import-statement",
+          "original": "../common/FourCC.js"
+        },
+        {
+          "path": "node_modules/music-metadata/lib/common/Util.js",
+          "kind": "import-statement",
+          "original": "../common/Util.js"
+        },
+        {
+          "path": "node_modules/music-metadata/lib/ParseError.js",
+          "kind": "import-statement",
+          "original": "../ParseError.js"
+        }
+      ],
+      "format": "esm"
+    },
+    "node_modules/music-metadata/lib/mp4/Atom.js": {
+      "bytes": 4813,
+      "imports": [
+        {
+          "path": "node_modules/debug/src/index.js",
+          "kind": "import-statement",
+          "original": "debug"
+        },
+        {
+          "path": "node_modules/music-metadata/lib/mp4/AtomToken.js",
+          "kind": "import-statement",
+          "original": "./AtomToken.js"
+        },
+        {
+          "path": "node_modules/music-metadata/lib/mp4/AtomToken.js",
+          "kind": "import-statement",
+          "original": "./AtomToken.js"
+        }
+      ],
+      "format": "esm"
+    },
+    "node_modules/music-metadata/lib/mp4/MP4Parser.js": {
+      "bytes": 30565,
+      "imports": [
+        {
+          "path": "node_modules/@borewit/text-codec/lib/index.js",
+          "kind": "import-statement",
+          "original": "@borewit/text-codec"
+        },
+        {
+          "path": "node_modules/debug/src/index.js",
+          "kind": "import-statement",
+          "original": "debug"
+        },
+        {
+          "path": "node_modules/token-types/lib/index.js",
+          "kind": "import-statement",
+          "original": "token-types"
+        },
+        {
+          "path": "node_modules/uint8array-extras/index.js",
+          "kind": "import-statement",
+          "original": "uint8array-extras"
+        },
+        {
+          "path": "node_modules/music-metadata/lib/common/BasicParser.js",
+          "kind": "import-statement",
+          "original": "../common/BasicParser.js"
+        },
+        {
+          "path": "node_modules/music-metadata/lib/id3v1/ID3v1Parser.js",
+          "kind": "import-statement",
+          "original": "../id3v1/ID3v1Parser.js"
+        },
+        {
+          "path": "node_modules/music-metadata/lib/type.js",
+          "kind": "import-statement",
+          "original": "../type.js"
+        },
+        {
+          "path": "node_modules/music-metadata/lib/mp4/Atom.js",
+          "kind": "import-statement",
+          "original": "./Atom.js"
+        },
+        {
+          "path": "node_modules/music-metadata/lib/mp4/AtomToken.js",
+          "kind": "import-statement",
+          "original": "./AtomToken.js"
+        },
+        {
+          "path": "node_modules/music-metadata/lib/mp4/AtomToken.js",
+          "kind": "import-statement",
+          "original": "./AtomToken.js"
+        }
+      ],
+      "format": "esm"
+    },
+    "node_modules/music-metadata/lib/mp4/Mp4Loader.js": {
+      "bytes": 328,
+      "imports": [
+        {
+          "path": "node_modules/music-metadata/lib/mp4/MP4Parser.js",
+          "kind": "dynamic-import",
+          "original": "./MP4Parser.js"
+        }
+      ],
+      "format": "esm"
+    },
+    "node_modules/music-metadata/lib/mpeg/ReplayGainDataFormat.js": {
+      "bytes": 1556,
+      "imports": [
+        {
+          "path": "node_modules/music-metadata/lib/common/Util.js",
+          "kind": "import-statement",
+          "original": "../common/Util.js"
+        }
+      ],
+      "format": "esm"
+    },
+    "node_modules/music-metadata/lib/mpeg/ExtendedLameHeader.js": {
+      "bytes": 1080,
+      "imports": [
+        {
+          "path": "node_modules/token-types/lib/index.js",
+          "kind": "import-statement",
+          "original": "token-types"
+        },
+        {
+          "path": "node_modules/music-metadata/lib/common/Util.js",
+          "kind": "import-statement",
+          "original": "../common/Util.js"
+        },
+        {
+          "path": "node_modules/music-metadata/lib/mpeg/ReplayGainDataFormat.js",
+          "kind": "import-statement",
+          "original": "./ReplayGainDataFormat.js"
+        }
+      ],
+      "format": "esm"
+    },
+    "node_modules/music-metadata/lib/mpeg/XingTag.js": {
+      "bytes": 2228,
+      "imports": [
+        {
+          "path": "node_modules/token-types/lib/index.js",
+          "kind": "import-statement",
+          "original": "token-types"
+        },
+        {
+          "path": "node_modules/music-metadata/lib/common/Util.js",
+          "kind": "import-statement",
+          "original": "../common/Util.js"
+        },
+        {
+          "path": "node_modules/music-metadata/lib/mpeg/ExtendedLameHeader.js",
+          "kind": "import-statement",
+          "original": "./ExtendedLameHeader.js"
+        }
+      ],
+      "format": "esm"
+    },
+    "node_modules/music-metadata/lib/mpeg/MpegParser.js": {
+      "bytes": 24499,
+      "imports": [
+        {
+          "path": "node_modules/debug/src/index.js",
+          "kind": "import-statement",
+          "original": "debug"
+        },
+        {
+          "path": "node_modules/strtok3/lib/index.js",
+          "kind": "import-statement",
+          "original": "strtok3"
+        },
+        {
+          "path": "node_modules/token-types/lib/index.js",
+          "kind": "import-statement",
+          "original": "token-types"
+        },
+        {
+          "path": "node_modules/music-metadata/lib/common/Util.js",
+          "kind": "import-statement",
+          "original": "../common/Util.js"
+        },
+        {
+          "path": "node_modules/music-metadata/lib/id3v2/AbstractID3Parser.js",
+          "kind": "import-statement",
+          "original": "../id3v2/AbstractID3Parser.js"
+        },
+        {
+          "path": "node_modules/music-metadata/lib/ParseError.js",
+          "kind": "import-statement",
+          "original": "../ParseError.js"
+        },
+        {
+          "path": "node_modules/music-metadata/lib/mpeg/XingTag.js",
+          "kind": "import-statement",
+          "original": "./XingTag.js"
+        }
+      ],
+      "format": "esm"
+    },
+    "node_modules/music-metadata/lib/mpeg/MpegLoader.js": {
+      "bytes": 285,
+      "imports": [
+        {
+          "path": "node_modules/music-metadata/lib/mpeg/MpegParser.js",
+          "kind": "dynamic-import",
+          "original": "./MpegParser.js"
+        }
+      ],
+      "format": "esm"
+    },
+    "node_modules/music-metadata/lib/musepack/MusepackConentError.js": {
+      "bytes": 156,
+      "imports": [
+        {
+          "path": "node_modules/music-metadata/lib/ParseError.js",
+          "kind": "import-statement",
+          "original": "../ParseError.js"
+        }
+      ],
+      "format": "esm"
+    },
+    "node_modules/music-metadata/lib/musepack/sv7/BitReader.js": {
+      "bytes": 1306,
+      "imports": [
+        {
+          "path": "node_modules/token-types/lib/index.js",
+          "kind": "import-statement",
+          "original": "token-types"
+        }
+      ],
+      "format": "esm"
+    },
+    "node_modules/music-metadata/lib/musepack/sv7/StreamVersion7.js": {
+      "bytes": 1801,
+      "imports": [
+        {
+          "path": "node_modules/@borewit/text-codec/lib/index.js",
+          "kind": "import-statement",
+          "original": "@borewit/text-codec"
+        },
+        {
+          "path": "node_modules/token-types/lib/index.js",
+          "kind": "import-statement",
+          "original": "token-types"
+        },
+        {
+          "path": "node_modules/music-metadata/lib/common/Util.js",
+          "kind": "import-statement",
+          "original": "../../common/Util.js"
+        }
+      ],
+      "format": "esm"
+    },
+    "node_modules/music-metadata/lib/musepack/sv7/MpcSv7Parser.js": {
+      "bytes": 2236,
+      "imports": [
+        {
+          "path": "node_modules/debug/src/index.js",
+          "kind": "import-statement",
+          "original": "debug"
+        },
+        {
+          "path": "node_modules/music-metadata/lib/apev2/APEv2Parser.js",
+          "kind": "import-statement",
+          "original": "../../apev2/APEv2Parser.js"
+        },
+        {
+          "path": "node_modules/music-metadata/lib/common/BasicParser.js",
+          "kind": "import-statement",
+          "original": "../../common/BasicParser.js"
+        },
+        {
+          "path": "node_modules/music-metadata/lib/musepack/MusepackConentError.js",
+          "kind": "import-statement",
+          "original": "../MusepackConentError.js"
+        },
+        {
+          "path": "node_modules/music-metadata/lib/musepack/sv7/BitReader.js",
+          "kind": "import-statement",
+          "original": "./BitReader.js"
+        },
+        {
+          "path": "node_modules/music-metadata/lib/musepack/sv7/StreamVersion7.js",
+          "kind": "import-statement",
+          "original": "./StreamVersion7.js"
+        }
+      ],
+      "format": "esm"
+    },
+    "node_modules/music-metadata/lib/musepack/sv8/StreamVersion8.js": {
+      "bytes": 2807,
+      "imports": [
+        {
+          "path": "node_modules/debug/src/index.js",
+          "kind": "import-statement",
+          "original": "debug"
+        },
+        {
+          "path": "node_modules/token-types/lib/index.js",
+          "kind": "import-statement",
+          "original": "token-types"
+        },
+        {
+          "path": "node_modules/music-metadata/lib/common/Util.js",
+          "kind": "import-statement",
+          "original": "../../common/Util.js"
+        }
+      ],
+      "format": "esm"
+    },
+    "node_modules/music-metadata/lib/musepack/sv8/MpcSv8Parser.js": {
+      "bytes": 2690,
+      "imports": [
+        {
+          "path": "node_modules/debug/src/index.js",
+          "kind": "import-statement",
+          "original": "debug"
+        },
+        {
+          "path": "node_modules/music-metadata/lib/apev2/APEv2Parser.js",
+          "kind": "import-statement",
+          "original": "../../apev2/APEv2Parser.js"
+        },
+        {
+          "path": "node_modules/music-metadata/lib/common/BasicParser.js",
+          "kind": "import-statement",
+          "original": "../../common/BasicParser.js"
+        },
+        {
+          "path": "node_modules/music-metadata/lib/common/FourCC.js",
+          "kind": "import-statement",
+          "original": "../../common/FourCC.js"
+        },
+        {
+          "path": "node_modules/music-metadata/lib/musepack/MusepackConentError.js",
+          "kind": "import-statement",
+          "original": "../MusepackConentError.js"
+        },
+        {
+          "path": "node_modules/music-metadata/lib/musepack/sv8/StreamVersion8.js",
+          "kind": "import-statement",
+          "original": "./StreamVersion8.js"
+        }
+      ],
+      "format": "esm"
+    },
+    "node_modules/music-metadata/lib/musepack/MusepackParser.js": {
+      "bytes": 1195,
+      "imports": [
+        {
+          "path": "node_modules/debug/src/index.js",
+          "kind": "import-statement",
+          "original": "debug"
+        },
+        {
+          "path": "node_modules/token-types/lib/index.js",
+          "kind": "import-statement",
+          "original": "token-types"
+        },
+        {
+          "path": "node_modules/music-metadata/lib/id3v2/AbstractID3Parser.js",
+          "kind": "import-statement",
+          "original": "../id3v2/AbstractID3Parser.js"
+        },
+        {
+          "path": "node_modules/music-metadata/lib/musepack/MusepackConentError.js",
+          "kind": "import-statement",
+          "original": "./MusepackConentError.js"
+        },
+        {
+          "path": "node_modules/music-metadata/lib/musepack/sv7/MpcSv7Parser.js",
+          "kind": "import-statement",
+          "original": "./sv7/MpcSv7Parser.js"
+        },
+        {
+          "path": "node_modules/music-metadata/lib/musepack/sv8/MpcSv8Parser.js",
+          "kind": "import-statement",
+          "original": "./sv8/MpcSv8Parser.js"
+        }
+      ],
+      "format": "esm"
+    },
+    "node_modules/music-metadata/lib/musepack/MusepackLoader.js": {
+      "bytes": 224,
+      "imports": [
+        {
+          "path": "node_modules/music-metadata/lib/musepack/MusepackParser.js",
+          "kind": "dynamic-import",
+          "original": "./MusepackParser.js"
+        }
+      ],
+      "format": "esm"
+    },
+    "node_modules/music-metadata/lib/ogg/flac/FlacStream.js": {
+      "bytes": 2836,
+      "imports": [
+        {
+          "path": "node_modules/debug/src/index.js",
+          "kind": "import-statement",
+          "original": "debug"
+        },
+        {
+          "path": "node_modules/music-metadata/lib/common/FourCC.js",
+          "kind": "import-statement",
+          "original": "../../common/FourCC.js"
+        },
+        {
+          "path": "node_modules/music-metadata/lib/flac/FlacParser.js",
+          "kind": "import-statement",
+          "original": "../../flac/FlacParser.js"
+        },
+        {
+          "path": "node_modules/music-metadata/lib/flac/FlacToken.js",
+          "kind": "import-statement",
+          "original": "../../flac/FlacToken.js"
+        },
+        {
+          "path": "node_modules/music-metadata/lib/ogg/vorbis/Vorbis.js",
+          "kind": "import-statement",
+          "original": "../vorbis/Vorbis.js"
+        }
+      ],
+      "format": "esm"
+    },
+    "node_modules/music-metadata/lib/ogg/OggToken.js": {
+      "bytes": 1394,
+      "imports": [
+        {
+          "path": "node_modules/token-types/lib/index.js",
+          "kind": "import-statement",
+          "original": "token-types"
+        },
+        {
+          "path": "node_modules/token-types/lib/index.js",
+          "kind": "import-statement",
+          "original": "token-types"
+        },
+        {
+          "path": "node_modules/music-metadata/lib/common/Util.js",
+          "kind": "import-statement",
+          "original": "../common/Util.js"
+        }
+      ],
+      "format": "esm"
+    },
+    "node_modules/music-metadata/lib/ogg/opus/Opus.js": {
+      "bytes": 969,
+      "imports": [
+        {
+          "path": "node_modules/token-types/lib/index.js",
+          "kind": "import-statement",
+          "original": "token-types"
+        },
+        {
+          "path": "node_modules/music-metadata/lib/ParseError.js",
+          "kind": "import-statement",
+          "original": "../../ParseError.js"
+        }
+      ],
+      "format": "esm"
+    },
+    "node_modules/music-metadata/lib/ogg/opus/OpusStream.js": {
+      "bytes": 2443,
+      "imports": [
+        {
+          "path": "node_modules/token-types/lib/index.js",
+          "kind": "import-statement",
+          "original": "token-types"
+        },
+        {
+          "path": "node_modules/music-metadata/lib/ogg/vorbis/VorbisStream.js",
+          "kind": "import-statement",
+          "original": "../vorbis/VorbisStream.js"
+        },
+        {
+          "path": "node_modules/music-metadata/lib/ogg/opus/Opus.js",
+          "kind": "import-statement",
+          "original": "./Opus.js"
+        },
+        {
+          "path": "node_modules/music-metadata/lib/ogg/opus/Opus.js",
+          "kind": "import-statement",
+          "original": "./Opus.js"
+        }
+      ],
+      "format": "esm"
+    },
+    "node_modules/music-metadata/lib/ogg/speex/Speex.js": {
+      "bytes": 1239,
+      "imports": [
+        {
+          "path": "node_modules/token-types/lib/index.js",
+          "kind": "import-statement",
+          "original": "token-types"
+        },
+        {
+          "path": "node_modules/music-metadata/lib/common/Util.js",
+          "kind": "import-statement",
+          "original": "../../common/Util.js"
+        }
+      ],
+      "format": "esm"
+    },
+    "node_modules/music-metadata/lib/ogg/speex/SpeexStream.js": {
+      "bytes": 1613,
+      "imports": [
+        {
+          "path": "node_modules/debug/src/index.js",
+          "kind": "import-statement",
+          "original": "debug"
+        },
+        {
+          "path": "node_modules/music-metadata/lib/ogg/vorbis/VorbisStream.js",
+          "kind": "import-statement",
+          "original": "../vorbis/VorbisStream.js"
+        },
+        {
+          "path": "node_modules/music-metadata/lib/ogg/speex/Speex.js",
+          "kind": "import-statement",
+          "original": "./Speex.js"
+        }
+      ],
+      "format": "esm"
+    },
+    "node_modules/music-metadata/lib/ogg/theora/Theora.js": {
+      "bytes": 688,
+      "imports": [
+        {
+          "path": "node_modules/token-types/lib/index.js",
+          "kind": "import-statement",
+          "original": "token-types"
+        }
+      ],
+      "format": "esm"
+    },
+    "node_modules/music-metadata/lib/ogg/theora/TheoraStream.js": {
+      "bytes": 1183,
+      "imports": [
+        {
+          "path": "node_modules/debug/src/index.js",
+          "kind": "import-statement",
+          "original": "debug"
+        },
+        {
+          "path": "node_modules/music-metadata/lib/ogg/theora/Theora.js",
+          "kind": "import-statement",
+          "original": "./Theora.js"
+        }
+      ],
+      "format": "esm"
+    },
+    "node_modules/music-metadata/lib/ogg/OggParser.js": {
+      "bytes": 6021,
+      "imports": [
+        {
+          "path": "node_modules/debug/src/index.js",
+          "kind": "import-statement",
+          "original": "debug"
+        },
+        {
+          "path": "node_modules/strtok3/lib/index.js",
+          "kind": "import-statement",
+          "original": "strtok3"
+        },
+        {
+          "path": "node_modules/token-types/lib/index.js",
+          "kind": "import-statement",
+          "original": "token-types"
+        },
+        {
+          "path": "node_modules/music-metadata/lib/common/BasicParser.js",
+          "kind": "import-statement",
+          "original": "../common/BasicParser.js"
+        },
+        {
+          "path": "node_modules/music-metadata/lib/ParseError.js",
+          "kind": "import-statement",
+          "original": "../ParseError.js"
+        },
+        {
+          "path": "node_modules/music-metadata/lib/ogg/flac/FlacStream.js",
+          "kind": "import-statement",
+          "original": "./flac/FlacStream.js"
+        },
+        {
+          "path": "node_modules/music-metadata/lib/ogg/OggToken.js",
+          "kind": "import-statement",
+          "original": "./OggToken.js"
+        },
+        {
+          "path": "node_modules/music-metadata/lib/ogg/opus/OpusStream.js",
+          "kind": "import-statement",
+          "original": "./opus/OpusStream.js"
+        },
+        {
+          "path": "node_modules/music-metadata/lib/ogg/speex/SpeexStream.js",
+          "kind": "import-statement",
+          "original": "./speex/SpeexStream.js"
+        },
+        {
+          "path": "node_modules/music-metadata/lib/ogg/theora/TheoraStream.js",
+          "kind": "import-statement",
+          "original": "./theora/TheoraStream.js"
+        },
+        {
+          "path": "node_modules/music-metadata/lib/ogg/vorbis/VorbisStream.js",
+          "kind": "import-statement",
+          "original": "./vorbis/VorbisStream.js"
+        }
+      ],
+      "format": "esm"
+    },
+    "node_modules/music-metadata/lib/ogg/OggLoader.js": {
+      "bytes": 322,
+      "imports": [
+        {
+          "path": "node_modules/music-metadata/lib/ogg/OggParser.js",
+          "kind": "dynamic-import",
+          "original": "./OggParser.js"
+        }
+      ],
+      "format": "esm"
+    },
+    "node_modules/music-metadata/lib/riff/RiffChunk.js": {
+      "bytes": 841,
+      "imports": [
+        {
+          "path": "node_modules/token-types/lib/index.js",
+          "kind": "import-statement",
+          "original": "token-types"
+        }
+      ],
+      "format": "esm"
+    },
+    "node_modules/music-metadata/lib/wav/BwfChunk.js": {
+      "bytes": 1437,
+      "imports": [
+        {
+          "path": "node_modules/token-types/lib/index.js",
+          "kind": "import-statement",
+          "original": "token-types"
+        },
+        {
+          "path": "node_modules/music-metadata/lib/common/Util.js",
+          "kind": "import-statement",
+          "original": "../common/Util.js"
+        }
+      ],
+      "format": "esm"
+    },
+    "node_modules/music-metadata/lib/wav/WaveChunk.js": {
+      "bytes": 2684,
+      "imports": [
+        {
+          "path": "node_modules/token-types/lib/index.js",
+          "kind": "import-statement",
+          "original": "token-types"
+        },
+        {
+          "path": "node_modules/music-metadata/lib/ParseError.js",
+          "kind": "import-statement",
+          "original": "../ParseError.js"
+        }
+      ],
+      "format": "esm"
+    },
+    "node_modules/music-metadata/lib/wav/WaveParser.js": {
+      "bytes": 10455,
+      "imports": [
+        {
+          "path": "node_modules/debug/src/index.js",
+          "kind": "import-statement",
+          "original": "debug"
+        },
+        {
+          "path": "node_modules/strtok3/lib/index.js",
+          "kind": "import-statement",
+          "original": "strtok3"
+        },
+        {
+          "path": "node_modules/token-types/lib/index.js",
+          "kind": "import-statement",
+          "original": "token-types"
+        },
+        {
+          "path": "node_modules/music-metadata/lib/common/BasicParser.js",
+          "kind": "import-statement",
+          "original": "../common/BasicParser.js"
+        },
+        {
+          "path": "node_modules/music-metadata/lib/common/FourCC.js",
+          "kind": "import-statement",
+          "original": "../common/FourCC.js"
+        },
+        {
+          "path": "node_modules/music-metadata/lib/id3v2/ID3v2Parser.js",
+          "kind": "import-statement",
+          "original": "../id3v2/ID3v2Parser.js"
+        },
+        {
+          "path": "node_modules/music-metadata/lib/riff/RiffChunk.js",
+          "kind": "import-statement",
+          "original": "../riff/RiffChunk.js"
+        },
+        {
+          "path": "node_modules/music-metadata/lib/wav/BwfChunk.js",
+          "kind": "import-statement",
+          "original": "./BwfChunk.js"
+        },
+        {
+          "path": "node_modules/music-metadata/lib/wav/WaveChunk.js",
+          "kind": "import-statement",
+          "original": "./WaveChunk.js"
+        },
+        {
+          "path": "node_modules/music-metadata/lib/wav/WaveChunk.js",
+          "kind": "import-statement",
+          "original": "./WaveChunk.js"
+        }
+      ],
+      "format": "esm"
+    },
+    "node_modules/music-metadata/lib/wav/WaveLoader.js": {
+      "bytes": 251,
+      "imports": [
+        {
+          "path": "node_modules/music-metadata/lib/wav/WaveParser.js",
+          "kind": "dynamic-import",
+          "original": "./WaveParser.js"
+        }
+      ],
+      "format": "esm"
+    },
+    "node_modules/music-metadata/lib/wavpack/WavPackToken.js": {
+      "bytes": 2973,
+      "imports": [
+        {
+          "path": "node_modules/token-types/lib/index.js",
+          "kind": "import-statement",
+          "original": "token-types"
+        },
+        {
+          "path": "node_modules/music-metadata/lib/common/FourCC.js",
+          "kind": "import-statement",
+          "original": "../common/FourCC.js"
+        }
+      ],
+      "format": "esm"
+    },
+    "node_modules/music-metadata/lib/wavpack/WavPackParser.js": {
+      "bytes": 5979,
+      "imports": [
+        {
+          "path": "node_modules/debug/src/index.js",
+          "kind": "import-statement",
+          "original": "debug"
+        },
+        {
+          "path": "node_modules/token-types/lib/index.js",
+          "kind": "import-statement",
+          "original": "token-types"
+        },
+        {
+          "path": "node_modules/uint8array-extras/index.js",
+          "kind": "import-statement",
+          "original": "uint8array-extras"
+        },
+        {
+          "path": "node_modules/music-metadata/lib/apev2/APEv2Parser.js",
+          "kind": "import-statement",
+          "original": "../apev2/APEv2Parser.js"
+        },
+        {
+          "path": "node_modules/music-metadata/lib/common/BasicParser.js",
+          "kind": "import-statement",
+          "original": "../common/BasicParser.js"
+        },
+        {
+          "path": "node_modules/music-metadata/lib/common/FourCC.js",
+          "kind": "import-statement",
+          "original": "../common/FourCC.js"
+        },
+        {
+          "path": "node_modules/music-metadata/lib/ParseError.js",
+          "kind": "import-statement",
+          "original": "../ParseError.js"
+        },
+        {
+          "path": "node_modules/music-metadata/lib/wavpack/WavPackToken.js",
+          "kind": "import-statement",
+          "original": "./WavPackToken.js"
+        }
+      ],
+      "format": "esm"
+    },
+    "node_modules/music-metadata/lib/wavpack/WavPackLoader.js": {
+      "bytes": 226,
+      "imports": [
+        {
+          "path": "node_modules/music-metadata/lib/wavpack/WavPackParser.js",
+          "kind": "dynamic-import",
+          "original": "./WavPackParser.js"
+        }
+      ],
+      "format": "esm"
+    },
+    "node_modules/music-metadata/lib/ParserFactory.js": {
+      "bytes": 6101,
+      "imports": [
+        {
+          "path": "node_modules/content-type/dist/index.js",
+          "kind": "import-statement",
+          "original": "content-type"
+        },
+        {
+          "path": "node_modules/debug/src/index.js",
+          "kind": "import-statement",
+          "original": "debug"
+        },
+        {
+          "path": "node_modules/file-type/source/index.js",
+          "kind": "import-statement",
+          "original": "file-type"
+        },
+        {
+          "path": "node_modules/media-typer/dist/index.js",
+          "kind": "import-statement",
+          "original": "media-typer"
+        },
+        {
+          "path": "node_modules/music-metadata/lib/aiff/AiffLoader.js",
+          "kind": "import-statement",
+          "original": "./aiff/AiffLoader.js"
+        },
+        {
+          "path": "node_modules/music-metadata/lib/apev2/Apev2Loader.js",
+          "kind": "import-statement",
+          "original": "./apev2/Apev2Loader.js"
+        },
+        {
+          "path": "node_modules/music-metadata/lib/asf/AsfLoader.js",
+          "kind": "import-statement",
+          "original": "./asf/AsfLoader.js"
+        },
+        {
+          "path": "node_modules/music-metadata/lib/common/MetadataCollector.js",
+          "kind": "import-statement",
+          "original": "./common/MetadataCollector.js"
+        },
+        {
+          "path": "node_modules/music-metadata/lib/core.js",
+          "kind": "import-statement",
+          "original": "./core.js"
+        },
+        {
+          "path": "node_modules/music-metadata/lib/dsdiff/DsdiffLoader.js",
+          "kind": "import-statement",
+          "original": "./dsdiff/DsdiffLoader.js"
+        },
+        {
+          "path": "node_modules/music-metadata/lib/dsf/DsfLoader.js",
+          "kind": "import-statement",
+          "original": "./dsf/DsfLoader.js"
+        },
+        {
+          "path": "node_modules/music-metadata/lib/flac/FlacLoader.js",
+          "kind": "import-statement",
+          "original": "./flac/FlacLoader.js"
+        },
+        {
+          "path": "node_modules/music-metadata/lib/matroska/MatroskaLoader.js",
+          "kind": "import-statement",
+          "original": "./matroska/MatroskaLoader.js"
+        },
+        {
+          "path": "node_modules/music-metadata/lib/mp4/Mp4Loader.js",
+          "kind": "import-statement",
+          "original": "./mp4/Mp4Loader.js"
+        },
+        {
+          "path": "node_modules/music-metadata/lib/mpeg/MpegLoader.js",
+          "kind": "import-statement",
+          "original": "./mpeg/MpegLoader.js"
+        },
+        {
+          "path": "node_modules/music-metadata/lib/musepack/MusepackLoader.js",
+          "kind": "import-statement",
+          "original": "./musepack/MusepackLoader.js"
+        },
+        {
+          "path": "node_modules/music-metadata/lib/ogg/OggLoader.js",
+          "kind": "import-statement",
+          "original": "./ogg/OggLoader.js"
+        },
+        {
+          "path": "node_modules/music-metadata/lib/ParseError.js",
+          "kind": "import-statement",
+          "original": "./ParseError.js"
+        },
+        {
+          "path": "node_modules/music-metadata/lib/type.js",
+          "kind": "import-statement",
+          "original": "./type.js"
+        },
+        {
+          "path": "node_modules/music-metadata/lib/wav/WaveLoader.js",
+          "kind": "import-statement",
+          "original": "./wav/WaveLoader.js"
+        },
+        {
+          "path": "node_modules/music-metadata/lib/wavpack/WavPackLoader.js",
+          "kind": "import-statement",
+          "original": "./wavpack/WavPackLoader.js"
+        }
+      ],
+      "format": "esm"
+    },
+    "node_modules/music-metadata/lib/core.js": {
+      "bytes": 4498,
+      "imports": [
+        {
+          "path": "node_modules/strtok3/lib/index.js",
+          "kind": "import-statement",
+          "original": "strtok3"
+        },
+        {
+          "path": "node_modules/music-metadata/lib/apev2/APEv2Parser.js",
+          "kind": "import-statement",
+          "original": "./apev2/APEv2Parser.js"
+        },
+        {
+          "path": "node_modules/music-metadata/lib/id3v1/ID3v1Parser.js",
+          "kind": "import-statement",
+          "original": "./id3v1/ID3v1Parser.js"
+        },
+        {
+          "path": "node_modules/music-metadata/lib/lyrics3/Lyrics3.js",
+          "kind": "import-statement",
+          "original": "./lyrics3/Lyrics3.js"
+        },
+        {
+          "path": "node_modules/music-metadata/lib/ParserFactory.js",
+          "kind": "import-statement",
+          "original": "./ParserFactory.js"
+        },
+        {
+          "path": "node_modules/music-metadata/lib/ParseError.js",
+          "kind": "import-statement",
+          "original": "./ParseError.js"
+        },
+        {
+          "path": "node_modules/music-metadata/lib/ParseError.js",
+          "kind": "import-statement",
+          "original": "./ParseError.js"
+        },
+        {
+          "path": "node_modules/music-metadata/lib/type.js",
+          "kind": "import-statement",
+          "original": "./type.js"
+        }
+      ],
+      "format": "esm"
+    },
+    "node_modules/music-metadata/lib/index.js": {
+      "bytes": 1883,
+      "imports": [
+        {
+          "path": "node_modules/debug/src/index.js",
+          "kind": "import-statement",
+          "original": "debug"
+        },
+        {
+          "path": "node_modules/strtok3/lib/index.js",
+          "kind": "import-statement",
+          "original": "strtok3"
+        },
+        {
+          "path": "node_modules/music-metadata/lib/core.js",
+          "kind": "import-statement",
+          "original": "./core.js"
+        },
+        {
+          "path": "node_modules/music-metadata/lib/ParserFactory.js",
+          "kind": "import-statement",
+          "original": "./ParserFactory.js"
+        },
+        {
+          "path": "node_modules/music-metadata/lib/core.js",
+          "kind": "import-statement",
+          "original": "./core.js"
+        }
+      ],
+      "format": "esm"
+    },
+    "apple-library.cjs": {
+      "bytes": 3198,
+      "imports": [
+        {
+          "path": "node:fs",
+          "kind": "require-call",
+          "external": true
+        },
+        {
+          "path": "node:path",
+          "kind": "require-call",
+          "external": true
+        },
+        {
+          "path": "node:crypto",
+          "kind": "require-call",
+          "external": true
+        },
+        {
+          "path": "node:zlib",
+          "kind": "require-call",
+          "external": true
+        },
+        {
+          "path": "node:url",
+          "kind": "require-call",
+          "external": true
+        }
+      ],
+      "format": "cjs"
+    },
+    "local-media.mjs": {
+      "bytes": 2774,
+      "imports": [
+        {
+          "path": "node:fs",
+          "kind": "import-statement",
+          "external": true
+        },
+        {
+          "path": "node:path",
+          "kind": "import-statement",
+          "external": true
+        },
+        {
+          "path": "node_modules/music-metadata/lib/index.js",
+          "kind": "import-statement",
+          "original": "music-metadata"
+        },
+        {
+          "path": "apple-library.cjs",
+          "kind": "import-statement",
+          "original": "./apple-library.cjs"
+        }
+      ],
+      "format": "esm"
+    }
+  },
+  "outputs": {
+    "vendor/local-media.cjs": {
+      "imports": [
+        {
+          "path": "tty",
+          "kind": "require-call",
+          "external": true
+        },
+        {
+          "path": "util",
+          "kind": "require-call",
+          "external": true
+        },
+        {
+          "path": "supports-color",
+          "kind": "require-call",
+          "external": true
+        },
+        {
+          "path": "node:fs/promises",
+          "kind": "require-call",
+          "external": true
+        },
+        {
+          "path": "node:fs",
+          "kind": "require-call",
+          "external": true
+        },
+        {
+          "path": "node:path",
+          "kind": "require-call",
+          "external": true
+        },
+        {
+          "path": "node:crypto",
+          "kind": "require-call",
+          "external": true
+        },
+        {
+          "path": "node:zlib",
+          "kind": "require-call",
+          "external": true
+        },
+        {
+          "path": "node:url",
+          "kind": "require-call",
+          "external": true
+        },
+        {
+          "path": "node:fs",
+          "kind": "require-call",
+          "external": true
+        },
+        {
+          "path": "node:path",
+          "kind": "require-call",
+          "external": true
+        }
+      ],
+      "exports": [],
+      "entryPoint": "local-media.mjs",
+      "inputs": {
+        "node_modules/ms/index.js": {
+          "bytesInOutput": 2886
+        },
+        "node_modules/debug/src/common.js": {
+          "bytesInOutput": 5948
+        },
+        "node_modules/debug/src/browser.js": {
+          "bytesInOutput": 4725
+        },
+        "node_modules/debug/src/node.js": {
+          "bytesInOutput": 4345
+        },
+        "node_modules/debug/src/index.js": {
+          "bytesInOutput": 317
+        },
+        "node_modules/strtok3/lib/stream/Errors.js": {
+          "bytesInOutput": 499
+        },
+        "node_modules/strtok3/lib/stream/Deferred.js": {
+          "bytesInOutput": 88
+        },
+        "node_modules/strtok3/lib/stream/AbstractStreamReader.js": {
+          "bytesInOutput": 2360
+        },
+        "node_modules/strtok3/lib/stream/StreamReader.js": {
+          "bytesInOutput": 169
+        },
+        "node_modules/strtok3/lib/stream/WebStreamReader.js": {
+          "bytesInOutput": 429
+        },
+        "node_modules/strtok3/lib/stream/WebStreamByobReader.js": {
+          "bytesInOutput": 902
+        },
+        "node_modules/strtok3/lib/stream/WebStreamDefaultReader.js": {
+          "bytesInOutput": 1970
+        },
+        "node_modules/strtok3/lib/stream/WebStreamReaderFactory.js": {
+          "bytesInOutput": 589
+        },
+        "node_modules/strtok3/lib/stream/index.js": {
+          "bytesInOutput": 229
+        },
+        "node_modules/strtok3/lib/AbstractTokenizer.js": {
+          "bytesInOutput": 3866
+        },
+        "node_modules/strtok3/lib/ReadStreamTokenizer.js": {
+          "bytesInOutput": 4053
+        },
+        "node_modules/strtok3/lib/BufferTokenizer.js": {
+          "bytesInOutput": 1896
+        },
+        "node_modules/strtok3/lib/BlobTokenizer.js": {
+          "bytesInOutput": 1921
+        },
+        "node_modules/strtok3/lib/core.js": {
+          "bytesInOutput": 778
+        },
+        "node_modules/strtok3/lib/FileTokenizer.js": {
+          "bytesInOutput": 2433
+        },
+        "node_modules/strtok3/lib/index.js": {
+          "bytesInOutput": 212
+        },
+        "node_modules/@borewit/text-codec/lib/index.js": {
+          "bytesInOutput": 9670
+        },
+        "node_modules/ieee754/index.js": {
+          "bytesInOutput": 2475
+        },
+        "node_modules/token-types/lib/index.js": {
+          "bytesInOutput": 9378
+        },
+        "node_modules/music-metadata/lib/common/BasicParser.js": {
+          "bytesInOutput": 632
+        },
+        "node_modules/uint8array-extras/index.js": {
+          "bytesInOutput": 2691
+        },
+        "node_modules/music-metadata/lib/ParseError.js": {
+          "bytesInOutput": 1442
+        },
+        "node_modules/music-metadata/lib/common/Util.js": {
+          "bytesInOutput": 3487
+        },
+        "node_modules/music-metadata/lib/common/FourCC.js": {
+          "bytesInOutput": 813
+        },
+        "node_modules/music-metadata/lib/apev2/APEv2Token.js": {
+          "bytesInOutput": 3812
+        },
+        "node_modules/music-metadata/lib/apev2/APEv2Parser.js": {
+          "bytesInOutput": 9198
+        },
+        "node_modules/music-metadata/lib/id3v1/ID3v1Parser.js": {
+          "bytesInOutput": 7562
+        },
+        "node_modules/music-metadata/lib/id3v2/ID3v2ChapterToken.js": {
+          "bytesInOutput": 599
+        },
+        "node_modules/music-metadata/lib/id3v2/ID3v2Token.js": {
+          "bytesInOutput": 3731
+        },
+        "node_modules/music-metadata/lib/id3v2/FrameParser.js": {
+          "bytesInOutput": 18313
+        },
+        "node_modules/music-metadata/lib/id3v2/FrameHeader.js": {
+          "bytesInOutput": 2630
+        },
+        "node_modules/music-metadata/lib/id3v2/ID3v2Parser.js": {
+          "bytesInOutput": 7424
+        },
+        "node_modules/music-metadata/lib/iff/index.js": {
+          "bytesInOutput": 395
+        },
+        "node_modules/music-metadata/lib/aiff/AiffToken.js": {
+          "bytesInOutput": 2305
+        },
+        "node_modules/music-metadata/lib/aiff/AiffParser.js": {
+          "bytesInOutput": 4287
+        },
+        "node_modules/music-metadata/lib/matroska/types.js": {
+          "bytesInOutput": 740
+        },
+        "node_modules/music-metadata/lib/type.js": {
+          "bytesInOutput": 121
+        },
+        "node_modules/win-guid/lib/guid.js": {
+          "bytesInOutput": 2509
+        },
+        "node_modules/music-metadata/lib/asf/AsfGuid.js": {
+          "bytesInOutput": 5795
+        },
+        "node_modules/music-metadata/lib/asf/AsfUtil.js": {
+          "bytesInOutput": 902
+        },
+        "node_modules/music-metadata/lib/asf/AsfObject.js": {
+          "bytesInOutput": 11386
+        },
+        "node_modules/music-metadata/lib/asf/AsfParser.js": {
+          "bytesInOutput": 9768
+        },
+        "node_modules/music-metadata/lib/dsdiff/DsdiffToken.js": {
+          "bytesInOutput": 397
+        },
+        "node_modules/music-metadata/lib/dsdiff/DsdiffParser.js": {
+          "bytesInOutput": 7447
+        },
+        "node_modules/music-metadata/lib/id3v2/AbstractID3Parser.js": {
+          "bytesInOutput": 1783
+        },
+        "node_modules/music-metadata/lib/dsf/DsfChunk.js": {
+          "bytesInOutput": 1059
+        },
+        "node_modules/music-metadata/lib/dsf/DsfParser.js": {
+          "bytesInOutput": 4125
+        },
+        "node_modules/music-metadata/lib/ogg/vorbis/Vorbis.js": {
+          "bytesInOutput": 2423
+        },
+        "node_modules/music-metadata/lib/ogg/vorbis/VorbisDecoder.js": {
+          "bytesInOutput": 977
+        },
+        "node_modules/music-metadata/lib/ogg/vorbis/VorbisStream.js": {
+          "bytesInOutput": 5474
+        },
+        "node_modules/music-metadata/lib/flac/FlacToken.js": {
+          "bytesInOutput": 2745
+        },
+        "node_modules/music-metadata/lib/flac/FlacParser.js": {
+          "bytesInOutput": 4884
+        },
+        "node_modules/music-metadata/lib/ebml/types.js": {
+          "bytesInOutput": 221
+        },
+        "node_modules/music-metadata/lib/ebml/EbmlIterator.js": {
+          "bytesInOutput": 9092
+        },
+        "node_modules/music-metadata/lib/matroska/MatroskaDtd.js": {
+          "bytesInOutput": 13732
+        },
+        "node_modules/music-metadata/lib/matroska/MatroskaParser.js": {
+          "bytesInOutput": 6222
+        },
+        "node_modules/music-metadata/lib/mp4/AtomToken.js": {
+          "bytesInOutput": 18138
+        },
+        "node_modules/music-metadata/lib/mp4/Atom.js": {
+          "bytesInOutput": 4396
+        },
+        "node_modules/music-metadata/lib/mp4/MP4Parser.js": {
+          "bytesInOutput": 25807
+        },
+        "node_modules/music-metadata/lib/mpeg/ReplayGainDataFormat.js": {
+          "bytesInOutput": 676
+        },
+        "node_modules/music-metadata/lib/mpeg/ExtendedLameHeader.js": {
+          "bytesInOutput": 861
+        },
+        "node_modules/music-metadata/lib/mpeg/XingTag.js": {
+          "bytesInOutput": 1788
+        },
+        "node_modules/music-metadata/lib/mpeg/MpegParser.js": {
+          "bytesInOutput": 21988
+        },
+        "node_modules/music-metadata/lib/musepack/MusepackConentError.js": {
+          "bytesInOutput": 261
+        },
+        "node_modules/music-metadata/lib/musepack/sv7/BitReader.js": {
+          "bytesInOutput": 1391
+        },
+        "node_modules/music-metadata/lib/musepack/sv7/StreamVersion7.js": {
+          "bytesInOutput": 1670
+        },
+        "node_modules/music-metadata/lib/musepack/sv7/MpcSv7Parser.js": {
+          "bytesInOutput": 2262
+        },
+        "node_modules/music-metadata/lib/musepack/sv8/StreamVersion8.js": {
+          "bytesInOutput": 2678
+        },
+        "node_modules/music-metadata/lib/musepack/sv8/MpcSv8Parser.js": {
+          "bytesInOutput": 2438
+        },
+        "node_modules/music-metadata/lib/musepack/MusepackParser.js": {
+          "bytesInOutput": 1312
+        },
+        "node_modules/music-metadata/lib/ogg/flac/FlacStream.js": {
+          "bytesInOutput": 2734
+        },
+        "node_modules/music-metadata/lib/ogg/OggToken.js": {
+          "bytesInOutput": 1393
+        },
+        "node_modules/music-metadata/lib/ogg/opus/Opus.js": {
+          "bytesInOutput": 901
+        },
+        "node_modules/music-metadata/lib/ogg/opus/OpusStream.js": {
+          "bytesInOutput": 2242
+        },
+        "node_modules/music-metadata/lib/ogg/speex/Speex.js": {
+          "bytesInOutput": 1046
+        },
+        "node_modules/music-metadata/lib/ogg/speex/SpeexStream.js": {
+          "bytesInOutput": 1646
+        },
+        "node_modules/music-metadata/lib/ogg/theora/Theora.js": {
+          "bytesInOutput": 614
+        },
+        "node_modules/music-metadata/lib/ogg/theora/TheoraStream.js": {
+          "bytesInOutput": 1327
+        },
+        "node_modules/music-metadata/lib/ogg/OggParser.js": {
+          "bytesInOutput": 5580
+        },
+        "node_modules/music-metadata/lib/riff/RiffChunk.js": {
+          "bytesInOutput": 814
+        },
+        "node_modules/music-metadata/lib/wav/BwfChunk.js": {
+          "bytesInOutput": 1314
+        },
+        "node_modules/music-metadata/lib/wav/WaveChunk.js": {
+          "bytesInOutput": 2395
+        },
+        "node_modules/music-metadata/lib/wav/WaveParser.js": {
+          "bytesInOutput": 8874
+        },
+        "node_modules/music-metadata/lib/wavpack/WavPackToken.js": {
+          "bytesInOutput": 2815
+        },
+        "node_modules/music-metadata/lib/wavpack/WavPackParser.js": {
+          "bytesInOutput": 5146
+        },
+        "apple-library.cjs": {
+          "bytesInOutput": 4101
+        },
+        "local-media.mjs": {
+          "bytesInOutput": 3506
+        },
+        "node_modules/music-metadata/lib/index.js": {
+          "bytesInOutput": 834
+        },
+        "node_modules/music-metadata/lib/core.js": {
+          "bytesInOutput": 438
+        },
+        "node_modules/music-metadata/lib/lyrics3/Lyrics3.js": {
+          "bytesInOutput": 528
+        },
+        "node_modules/content-type/dist/index.js": {
+          "bytesInOutput": 5499
+        },
+        "node_modules/music-metadata/lib/ParserFactory.js": {
+          "bytesInOutput": 4327
+        },
+        "node_modules/file-type/source/index.js": {
+          "bytesInOutput": 42088
+        },
+        "node_modules/@tokenizer/inflate/lib/ZipHandler.js": {
+          "bytesInOutput": 8230
+        },
+        "node_modules/@tokenizer/inflate/lib/ZipToken.js": {
+          "bytesInOutput": 1990
+        },
+        "node_modules/@tokenizer/inflate/lib/index.js": {
+          "bytesInOutput": 0
+        },
+        "node_modules/@tokenizer/inflate/lib/GzipHandler.js": {
+          "bytesInOutput": 533
+        },
+        "node_modules/file-type/source/tokens.js": {
+          "bytesInOutput": 1249
+        },
+        "node_modules/file-type/source/supported.js": {
+          "bytesInOutput": 6869
+        },
+        "node_modules/file-type/source/parser.js": {
+          "bytesInOutput": 1623
+        },
+        "node_modules/file-type/source/detectors/zip.js": {
+          "bytesInOutput": 19274
+        },
+        "node_modules/file-type/source/detectors/ebml.js": {
+          "bytesInOutput": 2725
+        },
+        "node_modules/file-type/source/detectors/png.js": {
+          "bytesInOutput": 2297
+        },
+        "node_modules/file-type/source/detectors/asf.js": {
+          "bytesInOutput": 2845
+        },
+        "node_modules/media-typer/dist/index.js": {
+          "bytesInOutput": 561
+        },
+        "node_modules/music-metadata/lib/aiff/AiffLoader.js": {
+          "bytesInOutput": 288
+        },
+        "node_modules/music-metadata/lib/apev2/Apev2Loader.js": {
+          "bytesInOutput": 250
+        },
+        "node_modules/music-metadata/lib/asf/AsfLoader.js": {
+          "bytesInOutput": 312
+        },
+        "node_modules/music-metadata/lib/common/MetadataCollector.js": {
+          "bytesInOutput": 9656
+        },
+        "node_modules/music-metadata/lib/lrc/LyricsParser.js": {
+          "bytesInOutput": 1153
+        },
+        "node_modules/music-metadata/lib/common/GenericTagMapper.js": {
+          "bytesInOutput": 1403
+        },
+        "node_modules/music-metadata/lib/aiff/AiffTagMap.js": {
+          "bytesInOutput": 200
+        },
+        "node_modules/music-metadata/lib/common/CaseInsensitiveTagMap.js": {
+          "bytesInOutput": 420
+        },
+        "node_modules/music-metadata/lib/apev2/APEv2TagMapper.js": {
+          "bytesInOutput": 2365
+        },
+        "node_modules/music-metadata/lib/asf/AsfTagMapper.js": {
+          "bytesInOutput": 3457
+        },
+        "node_modules/music-metadata/lib/id3v1/ID3v1TagMap.js": {
+          "bytesInOutput": 265
+        },
+        "node_modules/music-metadata/lib/id3v2/ID3v22TagMapper.js": {
+          "bytesInOutput": 814
+        },
+        "node_modules/music-metadata/lib/id3v2/ID3v24TagMapper.js": {
+          "bytesInOutput": 5929
+        },
+        "node_modules/music-metadata/lib/matroska/MatroskaTagMapper.js": {
+          "bytesInOutput": 908
+        },
+        "node_modules/music-metadata/lib/mp4/MP4TagMapper.js": {
+          "bytesInOutput": 4481
+        },
+        "node_modules/music-metadata/lib/ogg/vorbis/VorbisTagMapper.js": {
+          "bytesInOutput": 4012
+        },
+        "node_modules/music-metadata/lib/common/CombinedTagMapper.js": {
+          "bytesInOutput": 1160
+        },
+        "node_modules/music-metadata/lib/riff/RiffInfoTagMap.js": {
+          "bytesInOutput": 837
+        },
+        "node_modules/music-metadata/lib/common/GenericTagTypes.js": {
+          "bytesInOutput": 4314
+        },
+        "node_modules/music-metadata/lib/dsdiff/DsdiffLoader.js": {
+          "bytesInOutput": 247
+        },
+        "node_modules/music-metadata/lib/dsf/DsfLoader.js": {
+          "bytesInOutput": 219
+        },
+        "node_modules/music-metadata/lib/flac/FlacLoader.js": {
+          "bytesInOutput": 226
+        },
+        "node_modules/music-metadata/lib/matroska/MatroskaLoader.js": {
+          "bytesInOutput": 328
+        },
+        "node_modules/music-metadata/lib/mp4/Mp4Loader.js": {
+          "bytesInOutput": 348
+        },
+        "node_modules/music-metadata/lib/mpeg/MpegLoader.js": {
+          "bytesInOutput": 306
+        },
+        "node_modules/music-metadata/lib/musepack/MusepackLoader.js": {
+          "bytesInOutput": 249
+        },
+        "node_modules/music-metadata/lib/ogg/OggLoader.js": {
+          "bytesInOutput": 344
+        },
+        "node_modules/music-metadata/lib/wav/WaveLoader.js": {
+          "bytesInOutput": 272
+        },
+        "node_modules/music-metadata/lib/wavpack/WavPackLoader.js": {
+          "bytesInOutput": 250
+        }
+      },
+      "bytes": 512420
+    }
+  }
+}
