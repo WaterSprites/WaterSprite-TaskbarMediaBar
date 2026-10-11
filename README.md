@@ -102,7 +102,7 @@
 
 ### Chrome／Edge
 
-1. 将主程序 ZIP 和对应浏览器的插件 ZIP 直接解压到同一位置，合并 `WaterSprite TaskbarMediaBar` 文件夹；不要额外创建一层同名文件夹。
+1. 解压插件包，将“浏览器插件”文件夹放入主程序目录（与 WaterSprite TaskbarMediaBar.exe 同一层）。
 2. 启动或重新启动 `WaterSprite TaskbarMediaBar.exe`。
 3. 打开浏览器扩展管理页面：Chrome 输入 `chrome://extensions`，Edge 输入 `edge://extensions`。
 4. 开启“开发者模式”。
