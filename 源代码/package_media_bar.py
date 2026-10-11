@@ -28,7 +28,7 @@ shutil.copy2(root/'LICENSE',extension/'LICENSE')
 archives=[(out,release/('WaterSprite-TaskbarMediaBar-'+version+'-x64.zip'))]
 instructions="""浏览器插件安装
 
-1. 将主程序 ZIP 和本 ZIP 直接解压到同一位置，合并 WaterSprite TaskbarMediaBar 文件夹；不要额外创建一层同名文件夹。
+1. 解压插件包，将“浏览器插件”文件夹放入主程序目录（与 WaterSprite TaskbarMediaBar.exe 同一层）。
 2. 启动或重新启动 WaterSprite TaskbarMediaBar.exe。
 3. 打开 {page}，开启“开发者模式”，点击“{load}”。
 4. 选择主程序内的“浏览器插件”文件夹（直接包含 manifest.json 的这一层），刷新音视频网页。
