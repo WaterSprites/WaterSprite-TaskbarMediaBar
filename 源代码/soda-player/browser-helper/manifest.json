@@ -1,6 +1,6 @@
 {
   "manifest_version": 3,
-  "name": "任务栏播放器 WaterSprite TaskbarMediaBar",
+  "name": "WaterSprite TaskbarMediaBar Extension",
   "version": "1.1.18",
   "description": "任务栏播放器的浏览器控制插件，读取正在播放网页的标题和图标，控制音视频播放与暂停。",
   "background": {

@@ -1,0 +1,254 @@
+[
+  {
+    "name": "@babel/helper-string-parser",
+    "version": "7.29.7",
+    "license": "MIT",
+    "path": "npm/@babel__helper-string-parser"
+  },
+  {
+    "name": "@babel/helper-validator-identifier",
+    "version": "7.29.7",
+    "license": "MIT",
+    "path": "npm/@babel__helper-validator-identifier"
+  },
+  {
+    "name": "@babel/parser",
+    "version": "7.29.9",
+    "license": "MIT",
+    "path": "npm/@babel__parser"
+  },
+  {
+    "name": "@babel/types",
+    "version": "7.29.8",
+    "license": "MIT",
+    "path": "npm/@babel__types"
+  },
+  {
+    "name": "@borewit/text-codec",
+    "version": "0.2.2",
+    "license": "MIT",
+    "path": "npm/@borewit__text-codec"
+  },
+  {
+    "name": "@jridgewell/sourcemap-codec",
+    "version": "1.6.0",
+    "license": "MIT",
+    "path": "npm/@jridgewell__sourcemap-codec"
+  },
+  {
+    "name": "@tokenizer/inflate",
+    "version": "0.4.1",
+    "license": "MIT",
+    "path": "npm/@tokenizer__inflate"
+  },
+  {
+    "name": "@tokenizer/token",
+    "version": "0.3.0",
+    "license": "MIT",
+    "path": "npm/@tokenizer__token"
+  },
+  {
+    "name": "@types/web-bluetooth",
+    "version": "0.0.21",
+    "license": "MIT",
+    "path": "npm/@types__web-bluetooth"
+  },
+  {
+    "name": "@vue/compiler-core",
+    "version": "3.5.43",
+    "license": "MIT",
+    "path": "npm/@vue__compiler-core"
+  },
+  {
+    "name": "entities",
+    "version": "7.0.1",
+    "license": "BSD-2-Clause",
+    "path": "npm/entities"
+  },
+  {
+    "name": "@vue/compiler-dom",
+    "version": "3.5.43",
+    "license": "MIT",
+    "path": "npm/@vue__compiler-dom"
+  },
+  {
+    "name": "@vue/compiler-sfc",
+    "version": "3.5.43",
+    "license": "MIT",
+    "path": "npm/@vue__compiler-sfc"
+  },
+  {
+    "name": "@vue/compiler-ssr",
+    "version": "3.5.43",
+    "license": "MIT",
+    "path": "npm/@vue__compiler-ssr"
+  },
+  {
+    "name": "@vue/reactivity",
+    "version": "3.5.43",
+    "license": "MIT",
+    "path": "npm/@vue__reactivity"
+  },
+  {
+    "name": "@vue/runtime-core",
+    "version": "3.5.43",
+    "license": "MIT",
+    "path": "npm/@vue__runtime-core"
+  },
+  {
+    "name": "@vue/runtime-dom",
+    "version": "3.5.43",
+    "license": "MIT",
+    "path": "npm/@vue__runtime-dom"
+  },
+  {
+    "name": "@vue/server-renderer",
+    "version": "3.5.43",
+    "license": "MIT",
+    "path": "npm/@vue__server-renderer"
+  },
+  {
+    "name": "@vue/shared",
+    "version": "3.5.43",
+    "license": "MIT",
+    "path": "npm/@vue__shared"
+  },
+  {
+    "name": "@vueuse/core",
+    "version": "13.9.0",
+    "license": "MIT",
+    "path": "npm/@vueuse__core"
+  },
+  {
+    "name": "@vueuse/metadata",
+    "version": "13.9.0",
+    "license": "MIT",
+    "path": "npm/@vueuse__metadata"
+  },
+  {
+    "name": "@vueuse/shared",
+    "version": "13.9.0",
+    "license": "MIT",
+    "path": "npm/@vueuse__shared"
+  },
+  {
+    "name": "content-type",
+    "version": "3.1.1",
+    "license": "MIT",
+    "path": "npm/content-type"
+  },
+  {
+    "name": "csstype",
+    "version": "3.2.3",
+    "license": "MIT",
+    "path": "npm/csstype"
+  },
+  {
+    "name": "debug",
+    "version": "4.4.3",
+    "license": "MIT",
+    "path": "npm/debug"
+  },
+  {
+    "name": "estree-walker",
+    "version": "2.0.2",
+    "license": "MIT",
+    "path": "npm/estree-walker"
+  },
+  {
+    "name": "file-type",
+    "version": "22.1.1",
+    "license": "MIT",
+    "path": "npm/file-type"
+  },
+  {
+    "name": "ieee754",
+    "version": "1.2.1",
+    "license": "BSD-3-Clause",
+    "path": "npm/ieee754"
+  },
+  {
+    "name": "magic-string",
+    "version": "0.30.21",
+    "license": "MIT",
+    "path": "npm/magic-string"
+  },
+  {
+    "name": "media-typer",
+    "version": "2.0.0",
+    "license": "MIT",
+    "path": "npm/media-typer"
+  },
+  {
+    "name": "ms",
+    "version": "2.1.3",
+    "license": "MIT",
+    "path": "npm/ms"
+  },
+  {
+    "name": "msgpackr",
+    "version": "2.1.0",
+    "license": "MIT",
+    "path": "npm/msgpackr"
+  },
+  {
+    "name": "music-metadata",
+    "version": "12.0.0",
+    "license": "MIT",
+    "path": "npm/music-metadata"
+  },
+  {
+    "name": "nanoid",
+    "version": "3.3.19",
+    "license": "MIT",
+    "path": "npm/nanoid"
+  },
+  {
+    "name": "picocolors",
+    "version": "1.1.1",
+    "license": "ISC",
+    "path": "npm/picocolors"
+  },
+  {
+    "name": "postcss",
+    "version": "8.5.28",
+    "license": "MIT",
+    "path": "npm/postcss"
+  },
+  {
+    "name": "source-map-js",
+    "version": "1.2.2",
+    "license": "BSD-3-Clause",
+    "path": "npm/source-map-js"
+  },
+  {
+    "name": "strtok3",
+    "version": "10.3.5",
+    "license": "MIT",
+    "path": "npm/strtok3"
+  },
+  {
+    "name": "token-types",
+    "version": "6.1.2",
+    "license": "MIT",
+    "path": "npm/token-types"
+  },
+  {
+    "name": "uint8array-extras",
+    "version": "1.6.0",
+    "license": "MIT",
+    "path": "npm/uint8array-extras"
+  },
+  {
+    "name": "vue",
+    "version": "3.5.43",
+    "license": "MIT",
+    "path": "npm/vue"
+  },
+  {
+    "name": "win-guid",
+    "version": "0.2.1",
+    "license": "MIT",
+    "path": "npm/win-guid"
+  }
+]

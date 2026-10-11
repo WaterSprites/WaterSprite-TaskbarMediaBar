@@ -1,0 +1,17 @@
+const assert=require('node:assert/strict'),fs=require('node:fs'),path=require('node:path');
+const {pairExtension}=require('./extension-pairing.cjs');
+const root=fs.mkdtempSync(path.join(__dirname,'.extension-pairing-test-')),folder=path.join(root,'extension');
+assert.equal(pairExtension(folder,'fixture-token'),false);assert.equal(fs.existsSync(folder),false);
+fs.mkdirSync(folder);const manifest={manifest_version:3,name:'WaterSprite TaskbarMediaBar Extension',version:'1.1.18'};
+fs.writeFileSync(path.join(folder,'manifest.json'),JSON.stringify(manifest));fs.writeFileSync(path.join(folder,'content.js'),'// independent newer extension');
+const before=fs.readFileSync(path.join(folder,'content.js'),'utf8');
+assert.equal(pairExtension(folder,'fixture-token'),true);
+assert(fs.readFileSync(path.join(folder,'auth.js'),'utf8').includes('fixture-token'));
+assert.equal(fs.readFileSync(path.join(folder,'content.js'),'utf8'),before);
+assert.equal(JSON.parse(fs.readFileSync(path.join(folder,'manifest.json'),'utf8')).version,'1.1.18');
+assert.equal(pairExtension(folder,'second-token'),true);
+assert(fs.readFileSync(path.join(folder,'auth.js'),'utf8').includes('second-token'));
+fs.writeFileSync(path.join(folder,'manifest.json'),JSON.stringify({...manifest,name:'Other extension'}));
+assert.equal(pairExtension(folder,'third-token'),false);
+assert(root.startsWith(path.resolve(__dirname)+path.sep+'.extension-pairing-test-'));fs.rmSync(root,{recursive:true});
+console.log('Standalone extension pairing: token only; code/version preserved; missing or unrelated folder untouched.');

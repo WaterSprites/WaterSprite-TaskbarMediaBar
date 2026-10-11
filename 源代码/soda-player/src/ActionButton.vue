@@ -1,66 +1,17 @@
 <script setup lang="ts">
-import PlaySvg from './assets/play.js'
-import PauseSvg from './assets/pause.js'
-import NextSvg from './assets/next.js'
-import PrevSvg from './assets/prev.js'
-import HeartOutlineSvg from './assets/heart-outline.js'
-import HeartFilledSvg from './assets/heart-filled.js'
-defineProps<{
-  variant: 'prev' | 'play' | 'pause' | 'next' | 'heartOutline' | 'heartFilled'
-}>()
-const emit = defineEmits<{
-  (event: 'click', value: MouseEvent): void
-}>()
-const ICONS_MAP = {
-  play: PlaySvg,
-  pause: PauseSvg,
-  next: NextSvg,
-  prev: PrevSvg,
-  heartOutline: HeartOutlineSvg,
-  heartFilled: HeartFilledSvg,
-}
+// Copyright 2026 WaterSprites. MIT.
+import Play from './assets/play.js';
+import Pause from './assets/pause.js';
+import Next from './assets/next.js';
+import Previous from './assets/prev.js';
+const props=defineProps<{variant:'play'|'pause'|'next'|'prev',disabled?:boolean}>();
+const icons={play:Play,pause:Pause,next:Next,prev:Previous};
+defineEmits(['click']);
 </script>
-<template>
-  <button
-    class="action-button"
-    :class="{
-      'action-button--playback': ['play', 'pause'].includes(variant),
-      'action-button--heart-filled': variant === 'heartFilled',
-    }"
-    @click.stop="emit('click', $event)"
-  >
-    <component :is="ICONS_MAP[variant]" />
-  </button>
-</template>
-<style scoped lang="scss">
-.action-button {
-  height: 32px;
-  border: none;
-  background: transparent;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  cursor: pointer;
-  color: light-dark( rgba(0, 0, 0, 0.70), rgba(255, 255, 255, 0.70));
-  cursor: pointer;
-  width: 32px;
-  &--playback {
-    width: 48px;
-    border-radius: 9999px;
-    background: light-dark( rgba(0, 0, 0, 0.07), rgba(255, 255, 255, 0.07));
-    &:hover {
-      background: light-dark( rgba(0, 0, 0, 0.12), rgba(255, 255, 255, 0.12));
-    }
-  }
-  &:hover {
-    color: light-dark( #000, #fff);
-  }
-  &:disabled {opacity:.35;cursor:default}
-  &--heart-filled {
-    color: #E0214F;
-    &:hover {
-      color: #E0214F;
-    }
-  }
-}
+<template><button class="action-button" :class="{'action-button--playback':props.variant==='play'||props.variant==='pause'}" :disabled="props.disabled" @click.stop="$emit('click',$event)"><component :is="icons[props.variant]"/></button></template>
+<style scoped>
+.action-button{display:grid;place-items:center;width:32px;height:32px;border:0;padding:0;background:transparent;cursor:pointer;color:light-dark(rgb(0 0 0 / 70%),rgb(255 255 255 / 70%))}
+.action-button--playback{width:48px;border-radius:9999px;background:light-dark(rgb(0 0 0 / 7%),rgb(255 255 255 / 7%))}
+.action-button:hover{color:light-dark(black,white)}.action-button--playback:hover{background:light-dark(rgb(0 0 0 / 12%),rgb(255 255 255 / 12%))}
+.action-button:disabled{opacity:.35;cursor:default}
 </style>

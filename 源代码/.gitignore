@@ -17,3 +17,9 @@ smoke-error.txt
 WaterSprite TaskbarMediaBar/
 WaterSprite TaskbarMediaBar 浏览器插件/
 watersprite-version-resource.bin
+
+release-output/
+
+.cache-path-discovery-test-*/
+
+.extension-pairing-test-*/

@@ -18,7 +18,8 @@ WaterSprite TaskbarMediaBar/
 WaterSprite TaskbarMediaBar 浏览器插件/
 watersprite-version-resource.bin
 
-缓存/
-用户配置/
-开发运行/
-整理文件清单.json
+release-output/
+
+.cache-path-discovery-test-*/
+
+.extension-pairing-test-*/

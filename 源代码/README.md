@@ -1,6 +1,6 @@
 # WaterSprite TaskbarMediaBar
 
-任务栏播放器源码整理副本。主程序版本 0.6.50；浏览器插件版本以 `soda-player/browser-helper/manifest.json` 为准。
+任务栏播放器源码整理副本。主程序版本 1.0.0；浏览器插件版本以 `soda-player/browser-helper/manifest.json` 为准。
 
 本目录不含 node_modules、Electron 下载包、旧安装包、运行缓存、个人设置、连接令牌和签名私钥。
 
@@ -25,8 +25,13 @@ cd ..
 python package_media_bar.py
 ```
 
-构建会下载依赖与 Electron，需要网络连接。生成 `WaterSprite TaskbarMediaBar` 程序目录和 `WaterSprite-TaskbarMediaBar.zip`。
+构建会下载依赖与 Electron，需要网络连接。生成 release-output 目录中的主程序与浏览器插件两个独立 ZIP。
 
-压缩包包含主程序与同级的 `WaterSprite TaskbarMediaBar 浏览器插件`。解压后先启动主程序，再加载插件目录；首次运行生成本机认证文件。
+两个压缩包分别包含主程序与 `WaterSprite TaskbarMediaBar Extension`。解压后先启动主程序，再加载插件目录；首次运行生成本机认证文件。
 
 不要只执行 `npm start` 就认定首次运行已验证；界面需要先构建到 dist。部分回归脚本会启动窗口或操控媒体，阅读脚本后按需运行。
+
+主程序包：WaterSprite-TaskbarMediaBar-1.0.0-x64.zip。
+浏览器插件包：WaterSprite-TaskbarMediaBar-Extension-1.1.18-Chrome.zip。
+
+项目代码采用 MIT，第三方组件与 MiSans 字体适用各自许可证，详见 THIRD_PARTY_NOTICES.md。

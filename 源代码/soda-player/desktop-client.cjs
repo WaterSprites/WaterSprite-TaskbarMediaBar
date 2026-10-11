@@ -1,5 +1,5 @@
 const fs=require('node:fs'),path=require('node:path'),https=require('node:https');
-const helper=fs.readFileSync(path.join(__dirname,'browser-helper/page-media.js'),'utf8');
+const helper=fs.readFileSync(path.join(__dirname,'desktop-page-media.js'),'utf8');
 const rooms=new Map();const snapshots=new Map();const {WebArtwork}=require('./web-artwork.cjs');const artwork=new WebArtwork();
 function call(target,method,params){return new Promise((resolve,reject)=>{
  if(!/^ws:\/\/127\.0\.0\.1:43833\/devtools\/page\/[\w-]+$/.test(target.webSocketDebuggerUrl))return reject(Error('Invalid desktop media endpoint'));

@@ -2,18 +2,19 @@ const coverRank=kind=>['media','poster','thumbnail'].includes(kind)?0:kind==='av
 const http=require('node:http'),fs=require('node:fs'),path=require('node:path'),crypto=require('node:crypto');
 function copyExtensionIcons(source,target){fs.mkdirSync(target,{recursive:true});for(const name of fs.readdirSync(source))if(name.endsWith('.png'))fs.copyFileSync(path.join(source,name),path.join(target,name));}
 const {WebArtwork,imageMime}=require('./web-artwork.cjs');
+const {pairExtension}=require('./extension-pairing.cjs');
 class BrowserMedia {
  constructor(profile,port=43829,companionFolder=null,artwork=new WebArtwork(),diagnostics=()=>({}),control=null,persistentTokenPath=null){
   this.transport={mediaRequests:0,unauthorized:0,invalid:0,lastAt:0};this.clients=new Map();this.last='';this.sequence=0;this.artwork=artwork;
-  const folder=companionFolder||path.join(profile,'浏览器插件');fs.mkdirSync(folder,{recursive:true});
+  const folder=companionFolder||path.join(profile,'浏览器插件');
   const tokenPath=persistentTokenPath||path.join(profile,'browser-token');this.token=fs.existsSync(tokenPath)?fs.readFileSync(tokenPath,'utf8'):crypto.randomBytes(32).toString('hex');fs.writeFileSync(tokenPath,this.token);
-  copyExtensionIcons(path.join(__dirname,'browser-helper','icons'),path.join(folder,'icons'));
-  for(const name of ['manifest.json','page-media.js','page-cover.js','content.js','background.js'])fs.copyFileSync(path.join(__dirname,'browser-helper',name),path.join(folder,name));
-  fs.writeFileSync(path.join(folder,'auth.js'),'globalThis.taskbarMediaToken='+JSON.stringify(this.token)+';');
-  if(companionFolder&&companionFolder!==folder){try{fs.mkdirSync(companionFolder,{recursive:true});for(const name of ['manifest.json','page-media.js','page-cover.js','content.js','background.js','auth.js'])fs.copyFileSync(path.join(folder,name),path.join(companionFolder,name));}catch{}}
-  // Keep already-loaded extensions connected until the user loads the new folder.
-  const legacyRoot=path.join(path.dirname(profile),'任务栏播放器 - Taskbar Media Player 柔雾黑丝');
-  for(const previous of [path.join(legacyRoot,'网页播控扩展'),path.join(__dirname,'../../../任务栏播放器 - Taskbar Media Player 柔雾黑丝/网页播控扩展')]){if(fs.existsSync(previous)){copyExtensionIcons(path.join(folder,'icons'),path.join(previous,'icons'));for(const name of ['manifest.json','page-media.js','page-cover.js','content.js','background.js','auth.js'])fs.copyFileSync(path.join(folder,name),path.join(previous,name));}}
+  // Development copies can be generated locally. Release builds only pair a separately installed extension.
+  if(!companionFolder){
+   fs.mkdirSync(folder,{recursive:true});
+   copyExtensionIcons(path.join(__dirname,'browser-helper','icons'),path.join(folder,'icons'));
+   for(const name of ['manifest.json','page-media.js','page-cover.js','content.js','background.js'])fs.copyFileSync(path.join(__dirname,'browser-helper',name),path.join(folder,name));
+  }
+  this.paired=pairExtension(folder,this.token);
   this.folder=folder;
   this.server=http.createServer((req,res)=>{
    res.setHeader('Access-Control-Allow-Origin','*');res.setHeader('Access-Control-Allow-Headers','Content-Type, X-Taskbar-Token');res.setHeader('Access-Control-Allow-Methods','POST, OPTIONS');

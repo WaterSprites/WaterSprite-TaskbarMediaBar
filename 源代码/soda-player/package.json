@@ -1,6 +1,6 @@
 {
-  "name": "soda-widget-standalone-trial",
-  "version": "0.6.50",
+  "name": "watersprite-taskbar-media-bar",
+  "version": "1.0.0",
   "private": true,
   "main": "main.cjs",
   "scripts": {
@@ -20,5 +20,6 @@
     "vite": "^7.0.0",
     "vite-svg-loader": "^5.1.0"
   },
-  "productName": "WaterSprite TaskbarMediaBar"
+  "productName": "WaterSprite TaskbarMediaBar",
+  "license": "MIT"
 }
