@@ -74,7 +74,9 @@
 ## 安装与首次启动
 
 任务栏播放器：`WaterSprite-TaskbarMediaBar-1.0.0-x64.zip`。
+
 浏览器插件：按浏览器选择 `WaterSprite-TaskbarMediaBar-Extension-1.1.18-Chrome.zip` 或 `WaterSprite-TaskbarMediaBar-Extension-1.1.18-Edge.zip`。
+
 两个包分别下载、解压；只使用桌面播放器时，可以只下载任务栏播放器。
 
 
