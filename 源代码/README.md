@@ -25,13 +25,13 @@ cd ..
 python package_media_bar.py
 ```
 
-构建会下载依赖与 Electron，需要网络连接。生成 release-output 目录中的主程序与浏览器插件两个独立 ZIP。
+构建会下载依赖与 Electron，需要网络连接。生成 release-output 目录中的主程序、Chrome 插件和 Edge 插件三个 ZIP。
 
-两个压缩包分别包含主程序与 `WaterSprite TaskbarMediaBar Extension`。解压后先启动主程序，再加载插件目录；首次运行生成本机认证文件。
+主程序与插件独立发布。将主程序 ZIP 与对应浏览器的插件 ZIP 解压到同一位置，合并主程序文件夹；先启动主程序，再加载其中的 `浏览器插件` 目录。插件包不携带 `auth.js`，更新时保留本机原文件。
 
 不要只执行 `npm start` 就认定首次运行已验证；界面需要先构建到 dist。部分回归脚本会启动窗口或操控媒体，阅读脚本后按需运行。
 
 主程序包：WaterSprite-TaskbarMediaBar-1.0.0-x64.zip。
-浏览器插件包：WaterSprite-TaskbarMediaBar-Extension-1.1.18-Chrome.zip。
+浏览器插件包：WaterSprite-TaskbarMediaBar-Extension-1.1.18-Chrome.zip 或 WaterSprite-TaskbarMediaBar-Extension-1.1.18-Edge.zip。
 
 项目代码采用 MIT，第三方组件与 MiSans 字体适用各自许可证，详见 THIRD_PARTY_NOTICES.md。
