@@ -75,9 +75,11 @@
 
 任务栏播放器：`WaterSprite-TaskbarMediaBar-1.0.0-x64.zip`。
 
-浏览器插件：按浏览器选择 `WaterSprite-TaskbarMediaBar-Extension-1.1.18-Chrome.zip` 或 `WaterSprite-TaskbarMediaBar-Extension-1.1.18-Edge.zip`。
+Chrome 浏览器插件：`WaterSprite-TaskbarMediaBar-Extension-1.1.18-Chrome.zip`。
 
-两个包分别下载、解压；只使用桌面播放器时，可以只下载任务栏播放器。
+Edge 浏览器插件：`WaterSprite-TaskbarMediaBar-Extension-1.1.18-Edge.zip`。
+
+按需下载、解压；只使用桌面音乐播放器时，无需安装浏览器插件。
 
 
 ### 使用环境
