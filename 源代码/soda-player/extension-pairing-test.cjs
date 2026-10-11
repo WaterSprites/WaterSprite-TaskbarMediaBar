@@ -11,6 +11,12 @@ assert.equal(fs.readFileSync(path.join(folder,'content.js'),'utf8'),before);
 assert.equal(JSON.parse(fs.readFileSync(path.join(folder,'manifest.json'),'utf8')).version,'1.1.18');
 assert.equal(pairExtension(folder,'second-token'),true);
 assert(fs.readFileSync(path.join(folder,'auth.js'),'utf8').includes('second-token'));
+// Applying a new extension release must preserve the locally generated connection file.
+const authBefore=fs.readFileSync(path.join(folder,'auth.js'));
+fs.writeFileSync(path.join(folder,'content.js'),'// updated independent extension');
+assert.deepEqual(fs.readFileSync(path.join(folder,'auth.js')),authBefore);
+assert.equal(pairExtension(folder,'second-token'),true);
+assert.equal(fs.readFileSync(path.join(folder,'content.js'),'utf8'),'// updated independent extension');
 fs.writeFileSync(path.join(folder,'manifest.json'),JSON.stringify({...manifest,name:'Other extension'}));
 assert.equal(pairExtension(folder,'third-token'),false);
 assert(root.startsWith(path.resolve(__dirname)+path.sep+'.extension-pairing-test-'));fs.rmSync(root,{recursive:true});
