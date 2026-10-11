@@ -28,17 +28,17 @@ shutil.copy2(root/'LICENSE',extension/'LICENSE')
 archives=[(out,release/('WaterSprite-TaskbarMediaBar-'+version+'-x64.zip'))]
 instructions="""浏览器插件安装
 
-1. 解压插件包，将“浏览器插件”文件夹放入主程序目录（与 WaterSprite TaskbarMediaBar.exe 同一层）。
+1. 解压插件包，将“浏览器插件”文件夹放入任务栏播放器目录（与 WaterSprite TaskbarMediaBar.exe 同一层）。
 2. 启动或重新启动 WaterSprite TaskbarMediaBar.exe。
 3. 打开 {page}，开启“开发者模式”，点击“{load}”。
-4. 选择主程序内的“浏览器插件”文件夹（直接包含 manifest.json 的这一层），刷新音视频网页。
+4. 选择任务栏播放器内的“浏览器插件”文件夹（直接包含 manifest.json 的这一层），刷新音视频网页。
 
 浏览器插件更新
 
-1. 将新版插件 ZIP 解压到原位置，覆盖文件；保留原 auth.js，不要先删除插件文件夹。
+1. 更新浏览器插件时，把新版文件覆盖到现有的「浏览器插件」文件夹里。
 2. 在 {page} 点击该插件的“重新加载”，刷新音视频网页。
 
-安装后请保留“浏览器插件”文件夹。更新主程序时也保留它和“用户配置”。
+安装后请保留“浏览器插件”文件夹。更新任务栏播放器时也保留它和“用户配置”。
 """
 for browser,page,load in [('Chrome','chrome://extensions','加载未打包的扩展程序'),('Edge','edge://extensions','加载解压缩的扩展')]:
  (extension/'安装说明.txt').write_text(instructions.format(page=page,load=load),encoding='utf-8')
