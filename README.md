@@ -266,6 +266,6 @@ QQ音乐歌词与封面、酷我歌词会根据播放器配置、安装位置及
 
 ## 源代码与反馈
 
-配套源码文件夹名为 `WaterSprite TaskbarMediaBar 源代码`。构建步骤见源码中的 README。项目代码采用 MIT 许可证，第三方组件与 MiSans 字体适用各自许可，详见第三方声明。
+源代码及构建说明见[源码目录](https://github.com/WaterSprites/WaterSprite-TaskbarMediaBar/tree/main/源代码)。项目代码采用 MIT 许可证，第三方组件与 MiSans 字体适用各自许可，详见第三方声明。
 
 反馈问题时，请提供任务栏播放器版本、插件版本（网页问题）、Windows 版本、媒体来源、复现步骤及必要截图。
