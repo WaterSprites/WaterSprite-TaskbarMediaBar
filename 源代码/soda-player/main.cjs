@@ -29,12 +29,15 @@ function readCache(state){return new Promise(resolve=>{if(!cacheWorker){resolve(
 let cacheKey='',cacheResult={},cachePending=false,cacheAt=0,cacheChangedAt=0;
 let mpcState={},mpcBusy=false,mpcFile='',mpcCover='',mpcTimer;
 function companionExtensionFolder(){
- const parent=path.dirname(path.dirname(app.getPath('exe')));
- const preferred=path.join(parent,'WaterSprite TaskbarMediaBar Extension');
+ const directory=path.dirname(app.getPath('exe')),parent=path.dirname(directory);
+ const preferred=path.join(directory,'浏览器插件');
  // Keep previously loaded folders paired until the user installs the renamed extension.
  const previous=path.join(parent,'WaterSprite TaskbarMediaBar 浏览器插件');
  const legacy=path.join(parent,'任务栏播放器 WaterSprite TaskbarMediaBar 安装包','浏览器插件');
- return [preferred,previous,legacy].find(folder=>fs.existsSync(folder))||preferred;
+ const sibling=path.join(parent,'WaterSprite TaskbarMediaBar Extension');
+ return [preferred,sibling,previous,legacy].find(folder=>{
+  try{const manifest=JSON.parse(fs.readFileSync(path.join(folder,'manifest.json'),'utf8'));return manifest.manifest_version===3&&/WaterSprite\s+TaskbarMediaBar|Taskbar Media Player/i.test(manifest.name||'');}catch{return false;}
+ })||preferred;
 }
 app.setName('WaterSprite TaskbarMediaBar');
 app.setAppUserModelId('WaterSprite.TaskbarMediaBar');
